@@ -12,7 +12,7 @@ const IndexPage = ({ data }) => (
         </h3>
         <span>{node.frontmatter.date}</span>
           <p>{node.frontmatter.excerpt}</p>
-          <span>— {node.frontmatter.tags.join(`, `)}</span>
+          <Tags list={node.frontmatter.tags || []} />
       </div>
     ))}
   </div>

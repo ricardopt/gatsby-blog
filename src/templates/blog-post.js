@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import GatsbyLink from "gatsby-link";
+import Tags from "../components/tags";
 
 // import '../css/blog-post.css'; // make it pretty!
 
@@ -19,7 +20,7 @@ export default function Template({ data }) {
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
          <div className="blog-tag">
-          {post.frontmatter.tags}
+          <Tags list={post.frontmatter.tags || []} />
         </div>
       </div>
     </div>
