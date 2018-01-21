@@ -1,5 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import GatsbyLink from "gatsby-link";
 
 // import '../css/blog-post.css'; // make it pretty!
 
@@ -12,13 +13,14 @@ export default function Template({ data }) {
         <h1>
           {post.frontmatter.title}
         </h1>
-        <div className="blog-tag">
-          {post.frontmatter.tags}
-        </div>
+        <span>{post.frontmatter.date}</span>
         <div
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
+         <div className="blog-tag">
+          {post.frontmatter.tags}
+        </div>
       </div>
     </div>
   );
@@ -33,6 +35,7 @@ export const pageQuery = graphql`
         path
         title
         tags
+        excerpt
       }
     }
   }
