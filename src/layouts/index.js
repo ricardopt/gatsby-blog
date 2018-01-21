@@ -3,7 +3,10 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Header from '../components/Header'
-import './index.css'
+import '../sass/base.scss'
+import '../sass/typography.scss'
+import '../sass/layout.scss'
+require("prismjs/themes/prism-okaidia.css");
 
 const TemplateWrapper = ({ children }) => (
   <div>

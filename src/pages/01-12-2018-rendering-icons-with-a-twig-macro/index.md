@@ -2,15 +2,19 @@
 path: "/embedding-svg-icons-with-twig-macro"
 date: "2018-01-12T17:12:33.962Z"
 title: "Embedding SVG icons with a twig macro"
+tags: ['twig', 'drupal']
+excerpt: "Awesome way to embed svg in your pages"
 ---
 
 ## What are Twig Macros
 Before we start diving into embedding SVG icons using Twig macros, let's discuss what a Twig macro is.  If you read Twig's documentation, Macros are defined as follows:
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The GOP controls every branch of govt. I repeat: They control the WH &amp; Congress. They&#39;ve lurched from crisis to crisis for months w/o funding disaster recovery, health centers or children&#39;s health care. All while Dreamers hang in the balance. This is no way to govern.</p>&mdash; Elizabeth Warren (@SenWarren) <a href="https://twitter.com/SenWarren/status/954434607813922816?ref_src=twsrc%5Etfw">January 19, 2018</a></blockquote>
+
 
 _Macros are comparable with functions in regular programming languages. They are useful to put often used HTML idioms into reusable elements to not repeat yourself._
 
 Here is a small example of a macro that renders a form element:
-```
+```twig
 {% macro input(name, value, type, size) %}
     <input type="{{ type|default('text') }}" name="{{ name }}" value="{{ value|e }}" size="{{ size|default(20) }}" />
 {% endmacro %}
@@ -21,19 +25,20 @@ Macros differ from native PHP functions in a few ways:
 * Arguments of a macro are always optional.
 * If extra positional arguments are passed to a macro, they end up in the special varargs variable as a list of values.
 
-## What are we building today
-Today we will go over how to write a macro which will allow us to embed SVG images or icons in our site.  These icons can be any type of icons such as navigation icons, social media icons or any image you want to embed as SVG.
-There are serveral steps to making this happen.
+As you can see, macros allows us to simplify specific tasks and avoid repeating ourselves.  If you know Sass, I think of twig macros as Sass mixins.
 
+
+## What are we building today
+Today we will go over how to write a macro to embed SVG icons in our site.
 Here's an example of of what we are building today.  We want to cycle through a list of links and be able to embed an icon to each link based on the link type (i.e. twitter, facebook, instagram, etc.).
 
 ![Social Icons](social-icons.png)
 
-## Write the macro
-```
-{% macro get(name, classNames) %}
+## Write the twig macro
+```twig
+{% macro get(name, iconClass) %}
   {% include '@demo_theme/icons/assets/' ~ name ~ '.svg.twig' with {
-    'classNames': classNames,
+    'iconClass': iconClass,
     'name': name
   } only %}
 {% endmacro %}
@@ -46,10 +51,13 @@ We are going to create a twig file so we can embed the SVG code in it.  This may
 * In it, paste the SVG code below and save the file.
 
 ```
-<svg aria-hidden="true" role="img" class="{{ classNames|default('') }}" xmlns="http://www.w3.org/2000/svg" width="11" height="20" viewBox="0 0 11 20"><path d="M10.703.134V3.08H8.951q-.96 0-1.295.402t-.335 1.205v2.109h3.27l-.435 3.304H7.321v8.471H3.906V10.1H1.06V6.796h2.846V4.363q0-2.076 1.161-3.22T8.159-.001q1.641 0 2.545.134z"/></svg>
+<svg aria-hidden="true" role="img" class="{{ iconClass|default('') }}" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><title>facebook</title><path d="M58 0H6C2.7 0 0 2.7 0 6v52c0 3.3 2.7 6 6 6h26V36h-8v-8h8v-4c0-6.613 5.388-12 12-12h8v8h-8c-2.2 0-4 1.8-4 4v4h12l-2 8H40v28h18c3.3 0 6-2.7 6-6V6c0-3.3-2.7-6-6-6z"/></svg>
 ```
-### Write the structure for our component
-```
+
+## Let's generate data for the icons
+We are taking the component based theming approach for the icons.  We are going to create a JSON object to pass to the twig template.
+
+```json
 {
   "items":[
     {
@@ -75,18 +83,21 @@ We are going to create a twig file so we can embed the SVG code in it.  This may
   ]
 }
 ```
-What we've done above is write a JSON object which holds an array of items.  Each item has two properties: 1- icon, and 2- url.  You can do the same with YML if you prefer.
+What we've done above is write a JSON object which holds an array of items.  Each item has two properties, icon and url.
 
-### Writing the logic for our macro
-```php
+## Let's put our macro to use
+* Create a new file called `social-icons.twig`
+* Paste the code snippet below into it
+
+```twig
 {% import "../icons/icons.twig" as icons %}
 
 {% if items %}
   <ul class="social-icons">
   {% for item in items %}
     <li class="social-icons__item">
-      <a href="{{ item.url }}" class="social-icons__link">
-        {{ icons.get(item.icon, 'social-icons__icon') }}
+      <a href="{{ item.url }}">
+        {{ icons.get(item.icon|lower, 'icon icon-' ~ item.icon|lower) }}
         <span class="social-icons__name">{{ item.icon }}</span>
       </a>
     </li>
@@ -99,6 +110,40 @@ What we've done above is write a JSON object which holds an array of items.  Eac
 * We are wrapping our icons in an *Unordered List* (UL)
 * Then we loop through the **items** array
 * For each item we create a **List Item** (li) and assign a class of `social-icons--item`
-* Next we print an anchor to which we pass the **URL** value from the JSON object and also assign a css class (`social-icons--link`).  These classes are optionals
-* Here's the interesting part, we then call in the **get** method for the icons macro and pass the `icon.name` as a parameter.  This will grab the **name** value from the JSON object.  This name value needs to match the first part of the name of the twig template we created above (`facebook.svg.twig`)
-* Lastly, we print the icon name for accessibility purposes.
+* Next we print an anchor
+* Then we call the .get() function passing it the icon name.
+* (Optional) The second argument is any classes you would like to apply to the svg element.  We concatenate the icon name so the class is unique on each icon
+* Finally, inside a `<span>` we print the icon name for accesibility purposes.
+
+## Styling the icons
+```sass
+.social-icons {
+  background: $color-alabaster;
+  border: 1px solid $color-alto;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 20px;
+  list-style: none;
+
+  // SVG styles.
+  .icon {
+    fill: $color-tundora;
+    transition: fill 0.3s ease-in-out;
+
+    &:hover,
+    &:focus {
+      fill: $color-orange;
+    }
+  }
+}
+
+// Hides social networks names from view,
+// however they are still available to screenreaders.
+.social-icons__name {
+  @include element-invisible;
+}
+
+.social-icons__item {
+  margin: 0 20px;
+}```
