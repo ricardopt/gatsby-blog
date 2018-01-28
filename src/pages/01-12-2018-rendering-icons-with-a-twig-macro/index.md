@@ -2,7 +2,8 @@
 path: "/embedding-svg-icons-with-twig-macro"
 date: "2018-01-12T17:12:33.962Z"
 title: "Embedding SVG icons with a twig macro"
-tags: ['twig', 'drupal']
+tags: ['twig', 'drupal', 'SVG']
+img: "../img/hero.jpg"
 excerpt: "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla."
 ---
 
@@ -32,7 +33,7 @@ As you can see, macros allows us to simplify specific tasks and avoid repeating 
 Today we will go over how to write a macro to embed SVG icons in our site.
 Here's an example of of what we are building today.  We want to cycle through a list of links and be able to embed an icon to each link based on the link type (i.e. twitter, facebook, instagram, etc.).
 
-![Social Icons](social-icons.png)
+![heroes](../static/hero-b8b4492380cc9e5ead438c68189e0b90-4e8db.jpg)
 
 ## Write the twig macro
 ```twig

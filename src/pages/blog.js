@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Tags from "../components/tags";
 
-const IndexPage = ({ data }) => (
+const IndexBlog = ({ data }) => (
   <div>
     <h1>My Travel Blog</h1>
     {data.allMarkdownRemark.edges.map(({ node }) => (
@@ -30,7 +30,7 @@ const IndexPage = ({ data }) => (
 );
 
 export const query = graphql`
-  query IndexQuery {
+  query IndexBlogQuery {
     allMarkdownRemark {
       totalCount
       edges {
@@ -49,4 +49,4 @@ export const query = graphql`
   }
 `;
 
-export default IndexPage
+export default IndexBlog

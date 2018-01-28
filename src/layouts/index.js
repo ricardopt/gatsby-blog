@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import Link from 'gatsby-link'
 
 import Header from '../components/Header'
 import '../sass/base.scss'
 import '../sass/typography.scss'
 import '../sass/layout.scss'
-require("prismjs/themes/prism-okaidia.css");
+// require("prismjs/themes/prisms.css");
 
 const TemplateWrapper = ({ children }) => (
   <div>
@@ -18,7 +19,6 @@ const TemplateWrapper = ({ children }) => (
       ]}
     />
     <Header />
-
     <section>
       {children()}
     </section>

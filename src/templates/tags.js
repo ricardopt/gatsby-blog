@@ -1,5 +1,5 @@
 import React from "react";
-import GatsbyLink from "gatsby-link";
+import Link from "gatsby-link";
 
 export default function Tags({ pathContext }) {
   const { posts, post, tag } = pathContext;
@@ -14,14 +14,14 @@ export default function Tags({ pathContext }) {
             return (
               <li key={id}>
                 <h1>
-                  <GatsbyLink to={frontmatter.path}>{frontmatter.title}</GatsbyLink>
+                  <Link to={frontmatter.path}>{frontmatter.title}</Link>
                 </h1>
                 <p>{excerpt}</p>
               </li>
             );
           })}
         </ul>
-        <GatsbyLink to="/tags">All tags</GatsbyLink>
+        <Link to="/tags">All tags</Link>
       </div>
     );
   }
@@ -33,7 +33,7 @@ export default function Tags({ pathContext }) {
           const tags = posts[tagName];
           return (
             <li key={tagName}>
-              <GatsbyLink to={`/tags/${tagName}`}>{tagName}</GatsbyLink>
+              <Link to={`/tags/${tagName}`}>{tagName}</Link>
             </li>
           );
         })}

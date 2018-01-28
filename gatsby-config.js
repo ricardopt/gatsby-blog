@@ -5,8 +5,6 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-twitter`,
     {
@@ -14,13 +12,6 @@ module.exports = {
       options: {
         path: `${__dirname}/src/pages`,
         name: 'pages'
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `img`,
-        path: `${__dirname}/src/img/`
       }
     },
     {
@@ -52,6 +43,15 @@ module.exports = {
         ]
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `img`,
+        path: `${__dirname}/src/img/`
+      }
+    },
     `gatsby-plugin-sass`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`
   ]
 };

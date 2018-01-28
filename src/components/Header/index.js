@@ -1,13 +1,17 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Navigation from '../Nav/nav';
 
 const Header = () => (
-  <header role="header" class="site-header">
-    <div class="site-name">
-      <Link to="/">
+  <header role="header" className="site-header">
+    <div className="header__brand">
+      <Link className="site-name__link" to="/">
         Mario Hernandez
       </Link>
     </div>
+    <nav className="main-navigation">
+      <Navigation />
+    </nav>
   </header>
 )
 

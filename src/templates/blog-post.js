@@ -6,20 +6,28 @@ import Tags from "../components/tags";
 // import '../css/blog-post.css'; // make it pretty!
 
 export default function Template({ data }) {
-  const { markdownRemark: post } = data; // data.markdownRemark holds our post data
+  const { markdownRemark: post } = data;
   return (
     <div className="blog-post-container">
       <Helmet title={`Mario Hernandez - ${post.frontmatter.title}`} />
       <div className="blog-post">
-        <h1>
-          {post.frontmatter.title}
-        </h1>
-        <span>{post.frontmatter.date}</span>
+        <h1
+          className="blog-post__title"
+          dangerouslySetInnerHTML={{ __html: post.frontmatter.title}}
+          />
+
+        <div
+          className="blog-post__date"
+          dangerouslySetInnerHTML={{ __html: post.frontmatter.date}}
+          />
+
         <div
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
-         <div className="blog-tag">
+
+        <div
+         className="blog-post__tags">
           <Tags list={post.frontmatter.tags || []} />
         </div>
       </div>
@@ -36,9 +44,8 @@ export const pageQuery = graphql`
         path
         title
         tags
-        excerpt
+        img
       }
     }
   }
-`
-;
+`;
