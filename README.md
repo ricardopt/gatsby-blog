@@ -4,12 +4,15 @@ After reading and learning about Gatsby, I challenged myself to have a better un
 
 ## Blog features
 * Blog landing page at /blog
-* Blog post tagging 
-* Code styling with prismjs
+* Blog post tagging
+* Tags landing page
+* Syntax highlighting to code blocks with prismjs
 * Responsive images using gatsby-image
 * Twitter embed functionality
 * Google webfonts
 * Sass integration
+* Styled components
+* Main navigation
 
 ## More about Gatsby
 The default Gatsby starter
