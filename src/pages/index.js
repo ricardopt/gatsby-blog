@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import Tags from "../components/tags";
+import Tags from "../components/tags"
+import Img from "gatsby-image"
 
 const IndexPage = ({ data }) => (
   <div>
@@ -15,6 +16,8 @@ const IndexPage = ({ data }) => (
           className="blog-post__date"
           dangerouslySetInnerHTML={{ __html: node.frontmatter.date}}
           />
+
+        <Img sizes={node.frontmatter.featuredImage.childImageSharp.sizes} />
 
         <p
           className="blog-post__excerpt"
@@ -42,6 +45,13 @@ export const query = graphql`
             path
             excerpt
             date(formatString: "MMMM DD, YYYY")
+            featuredImage {
+              childImageSharp {
+                sizes(maxWidth: 1200) {
+                    ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
         }
       }

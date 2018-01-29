@@ -7,7 +7,7 @@ import Header from '../components/Header'
 import '../sass/base.scss'
 import '../sass/typography.scss'
 import '../sass/layout.scss'
-// require("prismjs/themes/prisms.css");
+require("prismjs/themes/prism.css");
 
 const TemplateWrapper = ({ children }) => (
   <div>

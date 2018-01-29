@@ -3,14 +3,15 @@ path: "/embedding-svg-icons-with-twig-macro"
 date: "2018-01-12T17:12:33.962Z"
 title: "Embedding SVG icons with a twig macro"
 tags: ['twig', 'drupal', 'SVG']
-img: "../img/hero.jpg"
+featuredImage: "./featured-image.jpg"
 excerpt: "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla."
 ---
 
 ## What are Twig Macros
+![Hiking image](./featured-image.jpg)
+
 Before we start diving into embedding SVG icons using Twig macros, let's discuss what a Twig macro is.  If you read Twig's documentation, Macros are defined as follows:
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The GOP controls every branch of govt. I repeat: They control the WH &amp; Congress. They&#39;ve lurched from crisis to crisis for months w/o funding disaster recovery, health centers or children&#39;s health care. All while Dreamers hang in the balance. This is no way to govern.</p>&mdash; Elizabeth Warren (@SenWarren) <a href="https://twitter.com/SenWarren/status/954434607813922816?ref_src=twsrc%5Etfw">January 19, 2018</a></blockquote>
-
 
 _Macros are comparable with functions in regular programming languages. They are useful to put often used HTML idioms into reusable elements to not repeat yourself._
 

@@ -3,6 +3,7 @@ path: "/first"
 date: "2017-07-12T17:12:33.962Z"
 title: "Welcome to Mario's blog post"
 tags: ['drupal', 'test']
+featuredImage: "./featured-image.jpg"
 excerpt: "Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis."
 ---
 

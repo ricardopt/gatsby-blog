@@ -1,7 +1,7 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import GatsbyLink from "gatsby-link";
-import Tags from "../components/tags";
+import React from 'react'
+import Helmet from 'react-helmet'
+import GatsbyLink from "gatsby-link"
+import Tags from "../components/tags"
 
 // import '../css/blog-post.css'; // make it pretty!
 
@@ -44,7 +44,13 @@ export const pageQuery = graphql`
         path
         title
         tags
-        img
+        featuredImage {
+          childImageSharp {
+            sizes(maxWidth: 1200) {
+                ...GatsbyImageSharpSizes
+            }
+          }
+        }
       }
     }
   }
