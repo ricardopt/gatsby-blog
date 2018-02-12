@@ -20,7 +20,7 @@ export default function Tags({ pathContext }) {
               </li>
             );
           })}
-        </ul>
+          </ul>
         <Link to="/tags">All tags</Link>
       </div>
     );

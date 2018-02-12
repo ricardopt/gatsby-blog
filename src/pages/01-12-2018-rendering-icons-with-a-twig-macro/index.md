@@ -11,7 +11,6 @@ excerpt: "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
 ![Hiking image](./featured-image.jpg)
 
 Before we start diving into embedding SVG icons using Twig macros, let's discuss what a Twig macro is.  If you read Twig's documentation, Macros are defined as follows:
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The GOP controls every branch of govt. I repeat: They control the WH &amp; Congress. They&#39;ve lurched from crisis to crisis for months w/o funding disaster recovery, health centers or children&#39;s health care. All while Dreamers hang in the balance. This is no way to govern.</p>&mdash; Elizabeth Warren (@SenWarren) <a href="https://twitter.com/SenWarren/status/954434607813922816?ref_src=twsrc%5Etfw">January 19, 2018</a></blockquote>
 
 _Macros are comparable with functions in regular programming languages. They are useful to put often used HTML idioms into reusable elements to not repeat yourself._
 
@@ -33,8 +32,6 @@ As you can see, macros allows us to simplify specific tasks and avoid repeating 
 ## What are we building today
 Today we will go over how to write a macro to embed SVG icons in our site.
 Here's an example of of what we are building today.  We want to cycle through a list of links and be able to embed an icon to each link based on the link type (i.e. twitter, facebook, instagram, etc.).
-
-![heroes](../static/hero-b8b4492380cc9e5ead438c68189e0b90-4e8db.jpg)
 
 ## Write the twig macro
 ```twig
@@ -118,7 +115,7 @@ What we've done above is write a JSON object which holds an array of items.  Eac
 * Finally, inside a `<span>` we print the icon name for accesibility purposes.
 
 ## Styling the icons
-```sass
+```css
 .social-icons {
   background: $color-alabaster;
   border: 1px solid $color-alto;
@@ -128,7 +125,6 @@ What we've done above is write a JSON object which holds an array of items.  Eac
   padding: 20px;
   list-style: none;
 
-  // SVG styles.
   .icon {
     fill: $color-tundora;
     transition: fill 0.3s ease-in-out;
@@ -140,12 +136,11 @@ What we've done above is write a JSON object which holds an array of items.  Eac
   }
 }
 
-// Hides social networks names from view,
-// however they are still available to screenreaders.
 .social-icons__name {
   @include element-invisible;
 }
 
 .social-icons__item {
   margin: 0 20px;
-}```
+}
+```
