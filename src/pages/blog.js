@@ -34,7 +34,10 @@ const IndexBlog = ({ data }) => (
 
 export const query = graphql`
   query IndexBlogQuery {
-    allMarkdownRemark {
+    allMarkdownRemark (
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { draft: { eq: false } } }
+    ) {
       totalCount
       edges {
         node {

@@ -45,6 +45,7 @@ export const pageQuery = graphql`
         path
         title
         tags
+        draft
         featuredImage {
           childImageSharp {
             sizes(maxWidth: 1200) {

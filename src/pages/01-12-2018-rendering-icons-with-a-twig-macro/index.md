@@ -3,6 +3,7 @@ path: "/embedding-svg-icons-with-twig-macro"
 date: "2018-01-12T17:12:33.962Z"
 title: "Embedding SVG icons with a twig macro"
 tags: ['twig', 'drupal', 'SVG']
+draft: false
 featuredImage: "./featured-image.jpg"
 excerpt: "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla."
 ---
