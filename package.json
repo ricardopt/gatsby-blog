@@ -4,14 +4,18 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "babel-plugin-styled-components": "^1.5.1",
     "gatsby": "^1.9.149",
+    "gatsby-cli": "^1.1.50",
     "gatsby-image": "^1.0.34",
     "gatsby-link": "^1.6.34",
     "gatsby-plugin-catch-links": "^1.0.14",
     "gatsby-plugin-google-fonts": "0.0.3",
     "gatsby-plugin-react-helmet": "^2.0.3",
+    "gatsby-plugin-react-next": "^1.0.11",
     "gatsby-plugin-sass": "^1.0.15",
     "gatsby-plugin-sharp": "^1.6.27",
+    "gatsby-plugin-styled-components": "^2.0.11",
     "gatsby-plugin-twitter": "^1.0.14",
     "gatsby-remark-images": "^1.5.41",
     "gatsby-remark-prismjs": "^1.2.12",
@@ -19,9 +23,11 @@
     "gatsby-source-filesystem": "^1.5.11",
     "gatsby-transformer-remark": "^1.7.28",
     "gatsby-transformer-sharp": "^1.6.17",
+    "npm": "^5.8.0",
     "react-helmet": "^5.2.0",
     "sharp": "^0.19.0",
-    "style-loader": "^0.13.0"
+    "style-loader": "^0.13.0",
+    "styled-components": "^3.2.5"
   },
   "keywords": [
     "gatsby"

@@ -1,9 +1,8 @@
-import React from "react"
-import Container from "../components/Container"
+import React from 'react';
 
 export default () => (
-  <Container>
+  <React.Fragment>
     <h1>About CSS Modules</h1>
     <p>CSS Modules are cool</p>
-  </Container>
+  </React.Fragment>
 );

@@ -1,62 +1,13 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import Tags from "../components/tags"
-import Img from "gatsby-image"
+import React from 'react';
+import Link from 'gatsby-link';
+import Hero from '../components/Hero';
+import SocialIcons from '../components/SocialIcons';
 
-const IndexPage = ({ data }) => (
-  <div>
-    <h1>My Travel Blog</h1>
-    {data.allMarkdownRemark.edges.map(({ node }) => (
-      <div key={node.id}>
-        <h3 className="blog-post__title">
-          <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
-        </h3>
-
-        <div
-          className="blog-post__date"
-          dangerouslySetInnerHTML={{ __html: node.frontmatter.date}}
-          />
-
-        <Img sizes={node.frontmatter.featuredImage.childImageSharp.sizes} />
-
-        <p
-          className="blog-post__excerpt"
-          dangerouslySetInnerHTML={{ __html: node.frontmatter.excerpt}}
-          />
-
-        <div className="blog-post__tags">
-          <Tags list={node.frontmatter.tags || []} />
-        </div>
-      </div>
-    ))}
-  </div>
+const Home = () => (
+  <React.Fragment>
+    <Hero />
+    <SocialIcons />
+  </React.Fragment>
 );
 
-export const query = graphql`
-  query IndexQuery {
-    allMarkdownRemark {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            tags
-            path
-            excerpt
-            date(formatString: "MMMM DD, YYYY")
-            featuredImage {
-              childImageSharp {
-                sizes(maxWidth: 1200) {
-                    ...GatsbyImageSharpSizes
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
-export default IndexPage
+export default Home;

@@ -7,6 +7,8 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-twitter`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-react-next`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

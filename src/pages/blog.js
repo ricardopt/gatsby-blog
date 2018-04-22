@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import Tags from "../components/tags"
-import Img from 'gatsby-image'
+import React from 'react';
+import Link from 'gatsby-link';
+import Tags from '../components/Tags';
+import Img from 'gatsby-image';
 
 const IndexBlog = ({ data }) => (
   <div>
@@ -14,15 +14,15 @@ const IndexBlog = ({ data }) => (
 
         <div
           className="blog-post__date"
-          dangerouslySetInnerHTML={{ __html: node.frontmatter.date}}
-          />
+          dangerouslySetInnerHTML={{ __html: node.frontmatter.date }}
+        />
 
         <Img sizes={node.frontmatter.featuredImage.childImageSharp.sizes} />
 
         <p
           className="blog-post__excerpt"
-          dangerouslySetInnerHTML={{ __html: node.frontmatter.excerpt}}
-          />
+          dangerouslySetInnerHTML={{ __html: node.frontmatter.excerpt }}
+        />
 
         <div className="blog-post__tags">
           <Tags list={node.frontmatter.tags || []} />
@@ -34,7 +34,7 @@ const IndexBlog = ({ data }) => (
 
 export const query = graphql`
   query IndexBlogQuery {
-    allMarkdownRemark (
+    allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { draft: { eq: false } } }
     ) {
@@ -51,7 +51,7 @@ export const query = graphql`
             featuredImage {
               childImageSharp {
                 sizes(maxWidth: 1200) {
-                    ...GatsbyImageSharpSizes
+                  ...GatsbyImageSharpSizes
                 }
               }
             }
@@ -62,4 +62,4 @@ export const query = graphql`
   }
 `;
 
-export default IndexBlog
+export default IndexBlog;

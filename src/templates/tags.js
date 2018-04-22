@@ -1,5 +1,5 @@
-import React from "react";
-import Link from "gatsby-link";
+import React from 'react';
+import Link from 'gatsby-link';
 
 export default function Tags({ pathContext }) {
   const { posts, post, tag } = pathContext;
@@ -7,7 +7,7 @@ export default function Tags({ pathContext }) {
     return (
       <div>
         <h1>
-          {post.length} post{post.length === 1 ? "" : "s"} tagged with {tag}
+          {post.length} post{post.length === 1 ? '' : 's'} tagged with {tag}
         </h1>
         <ul>
           {post.map(({ id, frontmatter, excerpt, fields }) => {
@@ -20,7 +20,7 @@ export default function Tags({ pathContext }) {
               </li>
             );
           })}
-          </ul>
+        </ul>
         <Link to="/tags">All tags</Link>
       </div>
     );
@@ -29,7 +29,7 @@ export default function Tags({ pathContext }) {
     <div>
       <h1>Tags</h1>
       <ul className="tags">
-        {Object.keys(posts).map(tagName => {
+        {Object.keys(posts).map((tagName) => {
           const tags = posts[tagName];
           return (
             <li key={tagName}>
