@@ -1,0 +1,25 @@
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  li {
+    list-style: none;
+    padding: 6px 14px;
+  }
+
+  a {
+    svg {
+      transition: stroke 0.3s ease-in-out;
+
+      &:hover {
+        stroke: lighten(#0e1e25, 20%);
+      }
+    }
+  }
+
+  span {
+    display: inline-block;
+    text-indent: -999999px;
+  }
+}

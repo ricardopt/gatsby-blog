@@ -3,15 +3,12 @@ import Link from 'gatsby-link';
 
 const Navigation = (props) => {
   return (
-    <ul className="navigation__list">
-      <li className="naigation__item">
+    <ul className="nav__list">
+      <li className="nav__item">
         <Link to={`/`}>Home</Link>
       </li>
-      <li className="naigation__item">
+      <li className="nav__item">
         <Link to={`/blog`}>Blog</Link>
-      </li>
-      <li className="naigation__item">
-        <Link to={`/contact`}>Contact</Link>
       </li>
     </ul>
   );

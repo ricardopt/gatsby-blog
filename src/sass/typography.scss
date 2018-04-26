@@ -4,10 +4,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: avenir next,avenir,sans-serif;
   line-height: 1.1;
-  font-weight: 500;
-  letter-spacing: 0.01rem;
+  font-weight: 400;
   margin: 0 0 1.45rem;
   text-rendering: optimizeLegibility;
   color: inherit;
@@ -15,11 +13,13 @@ h6 {
 }
 
 h1 {
-  font-size: 4.25rem;
+  font-size: 7rem;
+  font-weight: 600;
 }
 
 h2 {
-  font-size: 3.5rem;
+  font-size: 4rem;
+  font-weight: 200;
 }
 
 h3 {

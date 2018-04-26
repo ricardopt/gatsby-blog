@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 
 const IndexBlog = ({ data }) => (
   <div>
-    <h1>My Travel Blog</h1>
+    <h1>Blog</h1>
     {data.allMarkdownRemark.edges.map(({ node }) => (
       <div key={node.id}>
         <h3 className="blog-post__title">
