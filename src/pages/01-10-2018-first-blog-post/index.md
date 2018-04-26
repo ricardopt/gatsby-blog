@@ -1,9 +1,10 @@
 ---
-path: "/first"
+path: "/blog/first"
 date: "2017-07-09T17:12:33.962Z"
 title: "Welcome to Mario's blog post"
 tags: ['drupal', 'test']
-draft: true
+draft: false
+featured: false
 featuredImage: "./featured-image.jpg"
 excerpt: "Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis."
 ---
@@ -18,25 +19,27 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
 
-  return graphql(`{
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 1000
-    ) {
-      edges {
-        node {
-          excerpt(pruneLength: 250)
-          html
-          id
-          frontmatter {
-            date
-            path
-            title
+  return graphql(`
+    {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            excerpt(pruneLength: 250)
+            html
+            id
+            frontmatter {
+              date
+              path
+              title
+            }
           }
         }
       }
     }
-  }`).then(result => {
+  `).then((result) => {
     if (result.errors) {
       return Promise.reject(result.errors);
     }
