@@ -1,3 +1,4 @@
+@import './utils/utils.scss';
 /**
  * 1. Prevent adjustments of font size after orientation changes in
  *    IE on Windows Phone and in iOS.
@@ -7,10 +8,6 @@ html {
   -ms-text-size-adjust: 100%; /* 1 */
   -webkit-text-size-adjust: 100%; /* 1 */
   font-size: 62.5%;
-}
-
-.btn {
-  color: blue($color: #000000);
 }
 
 // https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
@@ -25,9 +22,8 @@ html {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
-    helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-  color: #0e1e25;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  color: $color-black;
   font-weight: normal;
   font-size: 1.8rem;
   line-height: 1.6;
@@ -72,7 +68,7 @@ template {
 
 a {
   background-color: transparent;
-  color: #0e1e25;
+  color: $color-black;
   text-decoration: underline;
   -webkit-text-decoration-skip: objects;
 }
@@ -96,11 +92,6 @@ strong {
 
 dfn {
   font-style: italic;
-}
-
-mark {
-  background-color: #ff0;
-  color: #000;
 }
 
 small {

@@ -8,9 +8,9 @@ const IndexBlog = ({ data }) => (
     <h1>Blog</h1>
     {data.allMarkdownRemark.edges.map(({ node }) => (
       <div key={node.id}>
-        <h3 className="blog-post__title">
+        <h2 className="blog-post__title">
           <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
-        </h3>
+        </h2>
 
         <div
           className="blog-post__date"

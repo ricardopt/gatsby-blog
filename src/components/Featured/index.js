@@ -2,11 +2,12 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Tags from '../Tags';
 import Img from 'gatsby-image';
+import '../../sass/featured-post.scss';
 
 const Featured = ({ featuredPosts }) => {
   return (
-    <div>
-      <h1>Blog</h1>
+    <div className="featured-post-wrapper">
+      <h3 className="featured-blog__heading">Featured</h3>
       {featuredPosts.map(({ node }) => (
         <div key={node.id}>
           <div className="featured-post">
