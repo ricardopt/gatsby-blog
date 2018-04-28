@@ -1,8 +1,8 @@
 import React from 'react';
+import About from '../components/About';
 
 export default () => (
   <React.Fragment>
-    <h1>About CSS Modules</h1>
-    <p>CSS Modules are cool</p>
+    <About />
   </React.Fragment>
 );

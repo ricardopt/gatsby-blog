@@ -1,0 +1,35 @@
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.about__headshot {
+  text-align: center;
+  flex: 0 0 300px;
+
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+}
+
+.about__name {
+  font-size: 2.5rem;
+  line-height: 1;
+  white-space: nowrap;
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+.about__title {
+  font-size: 1.6rem;
+  line-height: 1;
+  white-space: nowrap;
+}

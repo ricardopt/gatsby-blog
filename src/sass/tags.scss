@@ -1,4 +1,5 @@
-.tag-list {
+.tag-list,
+.tags {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -10,11 +11,14 @@
     a {
       padding: 6px 8px;
       display: block;
-      background: #eee;
+      background: #F5F5F5;
       text-decoration: none;
       text-transform: uppercase;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
+      font-weight: bold;
       line-height: 1;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
 
       &:hover {
         background: #000;

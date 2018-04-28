@@ -5,10 +5,19 @@ const Navigation = (props) => {
   return (
     <ul className="nav__list">
       <li className="nav__item">
-        <Link to={`/`}>Home</Link>
+        <Link exact to={'/'} activeClassName="active">
+          Home
+        </Link>
       </li>
       <li className="nav__item">
-        <Link to={`/blog`}>Blog</Link>
+        <Link exact to={'/blog'} activeClassName="active">
+          Blog
+        </Link>
+      </li>
+      <li className="nav__item">
+        <Link exact to={'/about'} activeClassName="active">
+          About
+        </Link>
       </li>
     </ul>
   );
