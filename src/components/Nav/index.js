@@ -1,23 +1,24 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import { NavLink } from 'react-router-dom';
 
 const Navigation = (props) => {
   return (
     <ul className="nav__list">
       <li className="nav__item">
-        <Link exact to={'/'} activeClassName="active">
+        <NavLink exact to={'/'} activeClassName="active">
           Home
-        </Link>
+        </NavLink>
       </li>
       <li className="nav__item">
-        <Link exact to={'/blog'} activeClassName="active">
+        <NavLink strict to={'/blog/'} activeClassName="active">
           Blog
-        </Link>
+        </NavLink>
       </li>
       <li className="nav__item">
-        <Link exact to={'/about'} activeClassName="active">
+        <NavLink exact to={'/about'} activeClassName="active">
           About
-        </Link>
+        </NavLink>
       </li>
     </ul>
   );
