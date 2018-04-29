@@ -15,17 +15,10 @@ const About = () => (
       <SocialIcons />
     </div>
     <div className="about__bio">
-      <p>
-        Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh
-        ultricies vehicula ut id elit. Donec ullamcorper nulla non metus auctor
-        fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-      </p>
-      Maecenas faucibus mollis interdum. Integer posuere erat a ante venenatis
-      dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor
-      fringilla. Sed posuere consectetur est at lobortis. Cras mattis
-      consectetur purus sit amet fermentum. Vestibulum id ligula porta felis
-      euismod semper. Maecenas faucibus mollis interdum.
+      <p>I live in Los Angeles area with my beautiful wife Damaris, My teenage son Diego and my little princess Valentina.</p>
+      <p>I work for <a href="https://www.mediacurrent.com">Mediacurrent</a> as a Senior Front-End Developer. I build large scale Drupal websites and I am a regular speaker at different conferences in the Los Angeles, San Diego and San Francisco areas.</p>
+
+      <p>I conduct private and community-driven training workshops on Drupal and latest front-end trends.</p>
     </div>
   </header>
 );

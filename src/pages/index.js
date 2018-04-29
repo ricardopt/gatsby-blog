@@ -2,11 +2,13 @@ import React from 'react';
 import Hero from '../components/Hero';
 import SocialIcons from '../components/SocialIcons';
 import Featured from '../components/Featured';
+import Button from '../components/Button';
 
 const Home = ({ data }) => (
   <React.Fragment>
     <Hero />
     <SocialIcons />
+    <Button className="button button__hero" />
     <Featured featuredPosts={data.allMarkdownRemark.edges} />
   </React.Fragment>
 );
