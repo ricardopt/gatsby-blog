@@ -1,3 +1,5 @@
+@import './utils/utils';
+
 .nav {
   padding: 20px 0;
 }
@@ -15,13 +17,15 @@
   a {
     text-decoration: none;
     text-transform: uppercase;
-    color: #222;
+    color: $color-black;
     font-size: 1.5rem;
+    transition: color 0.3s ease-in-out;
 
     &.active,
     &:hover {
       padding-bottom: 2px;
-      border-bottom: 4px solid #222;
+      color: $color-dark-gray;
+      border-bottom: 4px solid $color-black;
     }
   }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Tags from '../components/Tags';
 import Img from 'gatsby-image';
+import '../sass/blog.scss';
 
 const IndexBlog = ({ data }) => (
   <div>

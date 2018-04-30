@@ -1,9 +1,11 @@
+@import './utils/utils';
+
 .button {
   display: block;
   padding: 6px 25px;
-  background: #000;
-  border: 1px solid #000;
-  color: #fff;
+  background: $color-black;
+  border: 1px solid $color-black;
+  color: $color-white;
   text-decoration: none;
   border-radius: 3px;
   text-transform: uppercase;
@@ -12,10 +14,11 @@
   text-align: center;
   width: 170px;
   margin: 30px auto;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
-    border-color: #bbb;
-    background: transparent;
-    color: #000;
+    border-color: $color-dark-gray;
+    background: $color-white;
+    color: $color-black;
   }
 }

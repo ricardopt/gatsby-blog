@@ -1,3 +1,5 @@
+@import './utils/utils';
+
 .social-icons {
   display: flex;
   justify-content: center;
@@ -14,7 +16,7 @@
       transition: stroke 0.3s ease-in-out;
 
       &:hover {
-        stroke: #bbb;
+        stroke: lighten($color-dark-gray, 20%);
       }
     }
   }
