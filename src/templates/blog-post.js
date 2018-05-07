@@ -4,8 +4,6 @@ import GatsbyLink from 'gatsby-link';
 import Tags from '../components/Tags';
 import Styled from 'styled-components';
 
-// import '../css/blog-post.css'; // make it pretty!
-
 export default function Template({ data }) {
 	const { markdownRemark: post } = data;
 	return (

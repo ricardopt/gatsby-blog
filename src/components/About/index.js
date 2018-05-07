@@ -6,7 +6,8 @@ import Img from 'gatsby-image';
 
 export default ({ data }) => (
 	<div>
-		<h1> Hello gatsby - image </h1> {/* <Img resolutions={{ resolutions }} /> */}{' '}
+		<h1>Hello gatsby-image</h1>
+		<Img resolutions={{ resolutions }} />
 	</div>
 );
 

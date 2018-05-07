@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import Tags from '../components/Tags';
+import Tags from '../Tags';
 import Img from 'gatsby-image';
 import Styled from 'styled-components';
 
-const IndexBlog = ({ data }) => (
+const BlogPost = ({ data }) => (
 	<div>
 		<Heading>Blog</Heading>
 		{data.allMarkdownRemark.edges.map(({ node }) => (
@@ -25,30 +25,12 @@ const IndexBlog = ({ data }) => (
 	</div>
 );
 
-export default IndexBlog;
+const Heading = Styled.h1``;
 
-const BlogSection = Styled.section`
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 1rem;
-  margin-bottom: 3rem;
-`;
-
-const Heading = Styled.h1`
-color: red;
-`;
-
-const Title = Styled.h2`
-color: red;
-`;
-
-const Date = Styled.div`
-color: red;
-`;
-
-const Excerpt = Styled.p``;
+export default BlogPost;
 
 export const query = graphql`
-	query IndexBlogQuery {
+	query BlogPostQuery {
 		allMarkdownRemark(
 			sort: { fields: [frontmatter___date], order: DESC }
 			filter: { frontmatter: { draft: { eq: false } } }

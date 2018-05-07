@@ -1,26 +1,35 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import Styled, { isStyledComponent } from 'styled-components';
 
-const Navigation = (props) => {
-  return (
-    <ul className="nav__list">
-      <li className="nav__item">
-        <Link exact to={'/'} activeClassName="active">
-          Home
-        </Link>
-      </li>
-      <li className="nav__item">
-        <Link strict to={'/blog/'} activeClassName="active">
-          Blog
-        </Link>
-      </li>
-      <li className="nav__item">
-        <Link exact to={'/about'} activeClassName="active">
-          About
-        </Link>
-      </li>
-    </ul>
-  );
+const Navigation = props => {
+	return (
+		<MainNav>
+			<MainNavList>
+				<MainNavItem>
+					<Link exact to={'/'} activeClassName="active">
+						Home
+					</Link>
+				</MainNavItem>
+				<MainNavItem>
+					<Link strict to={'/blog/'} activeClassName="active">
+						Blog
+					</Link>
+				</MainNavItem>
+				<MainNavItem>
+					<Link exact to={'/about'} activeClassName="active">
+						About
+					</Link>
+				</MainNavItem>
+			</MainNavList>
+		</MainNav>
+	);
 };
+
+const MainNav = Styled.nav``;
+
+const MainNavList = Styled.ul``;
+
+const MainNavItem = Styled.li``;
 
 export default Navigation;
