@@ -7,7 +7,7 @@ export default function Tags({ pathContext }) {
 		return (
 			<div>
 				<h1>
-					{post.length} post{post.length === 1 ? '' : 's'} tagged with {tag}
+					{post.length} post{post.length === 1 ? '' : 's'} tagged with <span className="tag-name">{tag}</span>
 				</h1>
 				<ul>
 					{post.map(({ id, frontmatter, excerpt, fields }) => {
