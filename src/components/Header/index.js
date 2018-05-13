@@ -1,25 +1,33 @@
 import React from 'react';
-import Link from 'gatsby-link';
 import Navigation from '../Nav';
+import SiteLogo from '../Logo';
 import Styled from 'styled-components';
-import '../../sass/header.scss';
-import '../../sass/nav.scss';
+import { colors } from '../../colors';
 
 const Header = () => (
 	<SiteHeader>
 		<HeaderBrand>
-			<HeaderLink className="site-name__link" href="/">
-				Mario<span>Hernandez</span>
-			</HeaderLink>
+			<SiteLogo />
 		</HeaderBrand>
 		<Navigation />
 	</SiteHeader>
 );
 
-const SiteHeader = Styled.header``;
+const SiteHeader = Styled.header`
+  padding: 20px 0;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 
-const HeaderBrand = Styled.div``;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+`;
 
-const HeaderLink = Styled.a``;
+const HeaderBrand = Styled.div`
+  padding-bottom: 10px;
+`;
 
 export default Header;

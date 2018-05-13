@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import Styled from 'styled-components';
-// import '../../sass/hero.scss';
 
 const Hero = props => {
 	return (

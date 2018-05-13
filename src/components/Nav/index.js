@@ -1,35 +1,60 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import Styled, { isStyledComponent } from 'styled-components';
+import { colors } from '../../colors';
 
-const Navigation = props => {
+const Nav = props => {
 	return (
 		<MainNav>
-			<MainNavList>
-				<MainNavItem>
+			<NavList>
+				<NavItem>
 					<Link exact to={'/'} activeClassName="active">
 						Home
 					</Link>
-				</MainNavItem>
-				<MainNavItem>
+				</NavItem>
+				<NavItem>
 					<Link strict to={'/blog/'} activeClassName="active">
 						Blog
 					</Link>
-				</MainNavItem>
-				<MainNavItem>
+				</NavItem>
+				<NavItem>
 					<Link exact to={'/about'} activeClassName="active">
 						About
 					</Link>
-				</MainNavItem>
-			</MainNavList>
+				</NavItem>
+			</NavList>
 		</MainNav>
 	);
 };
 
-const MainNav = Styled.nav``;
+const MainNav = Styled.nav`
+  padding: 20px 0;
+`;
 
-const MainNavList = Styled.ul``;
+const NavList = Styled.ul`
+  display: flex;
+  list-style: none;
+  margin-left: auto;
+`;
 
-const MainNavItem = Styled.li``;
+const NavItem = Styled.li`
+  margin: 0 10px;
+  padding: 4px 10px;
 
-export default Navigation;
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: ${colors.black};
+    font-size: 1.5rem;
+    transition: color 0.3s ease-in-out;
+  
+    &.active,
+    &:hover {
+      padding-bottom: 2px;
+      color: ${colors.darkGray};
+      border-bottom: 4px solid ${colors.black};
+    }
+  }
+`;
+
+export default Nav;
