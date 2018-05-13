@@ -1,13 +1,14 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import Tags from '../Tags';
 import Img from 'gatsby-image';
 import Styled from 'styled-components';
+import Eyebrow from '../Eyebrow';
+import { colors } from '../../colors';
 
 const Featured = ({ featuredPosts }) => {
 	return (
 		<FeaturedWrapper>
-			<FeaturedHeading>Featured</FeaturedHeading>
+			<Eyebrow>Featured Post</Eyebrow>
 			{featuredPosts.map(({ node }) => (
 				<div key={node.id}>
 					<FeaturedPost>
@@ -26,8 +27,6 @@ const Featured = ({ featuredPosts }) => {
 							/>
 
 							<FeaturedExcerpt dangerouslySetInnerHTML={{ __html: node.frontmatter.excerpt }} />
-
-							<Tags list={node.frontmatter.tags || []} />
 						</FeaturedText>
 					</FeaturedPost>
 				</div>
@@ -37,7 +36,6 @@ const Featured = ({ featuredPosts }) => {
 };
 
 const FeaturedWrapper = Styled.section`
-  margin-top: 40px;
   padding-top: 30px;
   border-top: 1px solid $color-dark-gray;
 `;
@@ -98,6 +96,8 @@ const FeaturedDate = Styled.div`
   color: $color-dark-gray;
 `;
 
-const FeaturedExcerpt = Styled.p``;
+const FeaturedExcerpt = Styled.p`
+  font-size: 1.6rem;
+`;
 
 export default Featured;

@@ -1,8 +1,8 @@
 import React from 'react';
-import Link from 'gatsby-link';
 import Styled from 'styled-components';
 import Button from '../Button';
 import SocialIcons from '../SocialIcons';
+import { colors } from '../../colors';
 
 const Hero = props => {
 	return (
@@ -23,6 +23,7 @@ const HeroComponent = Styled.section`
   align-items: center;
   justify-content: center;
   margin-top: 80px;
+  border-bottom: 1px solid ${colors.darkGray};
 `;
 
 const HeroHeading = Styled.h1`

@@ -10,11 +10,10 @@ export default Button;
 const PrimaryButton = Styled.a`
   display: inline-block;
   padding: 8px 25px;
-  background: ${colors.black};
-  border: 1px solid ${colors.black};
-  color: ${colors.white};
+  background: ${colors.white};
+  border: 2px solid ${colors.black};
+  color: ${colors.black};
   text-decoration: none;
-  border-radius: 3px;
   text-transform: uppercase;
   white-space: nowrap;
   font-size: 1.4rem;
@@ -23,8 +22,8 @@ const PrimaryButton = Styled.a`
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    border-color: ${colors.darkGray};
-    background: ${colors.white};
-    color: ${colors.black};
+    border-color: ${colors.black};
+    background: ${colors.black};
+    color: ${colors.white};
   }
 `;
