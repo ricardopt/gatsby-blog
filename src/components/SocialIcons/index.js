@@ -7,7 +7,7 @@ const SocialIcons = props => {
 	return (
 		<SocialIconsList>
 			<SocialIconsItem>
-				<SocialIconsLink to="https://twitter.com/imariohernandez" className="social-icon">
+				<SocialIconsLink href="https://twitter.com/imariohernandez" className="social-icon">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="24"
@@ -26,7 +26,7 @@ const SocialIcons = props => {
 				</SocialIconsLink>
 			</SocialIconsItem>
 			<SocialIconsItem>
-				<SocialIconsLink to="https://www.instagram.com/_mariorhernandez/" className="social-icon">
+				<SocialIconsLink href="https://www.instagram.com/_mariorhernandez/" className="social-icon">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="24"
@@ -47,7 +47,7 @@ const SocialIcons = props => {
 				</SocialIconsLink>
 			</SocialIconsItem>
 			<SocialIconsItem>
-				<SocialIconsLink to="https://github.com/mariohernandez" className="social-icon">
+				<SocialIconsLink href="https://github.com/mariohernandez" className="social-icon">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="24"
