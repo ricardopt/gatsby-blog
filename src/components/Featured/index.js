@@ -36,7 +36,7 @@ const Featured = ({ featuredPosts }) => {
 	);
 };
 
-const FeaturedWrapper = Styled.div`
+const FeaturedWrapper = Styled.section`
   margin-top: 40px;
   padding-top: 30px;
   border-top: 1px solid $color-dark-gray;
@@ -53,15 +53,50 @@ const FeaturedHeading = Styled.h3`
   font-size: 1.5rem;
 `;
 
-const FeaturedPost = Styled.article``;
+const FeaturedPost = Styled.article`
+  display: flex;
+  flex-direction: column;
 
-const FeaturedImage = Styled.div``;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+`;
 
-const FeaturedText = Styled.div``;
+const FeaturedImage = Styled.div`
+  flex: 1 1 auto;
 
-const FeaturedTitle = Styled.h3``;
+  @media screen and (min-width: 740px) {
+    flex: 1 1 40%;
+  }
+`;
 
-const FeaturedDate = Styled.div``;
+const FeaturedText = Styled.div`
+  flex: 1 1 auto;
+  padding: 0;
+
+  @media screen and (min-width: 740px) {
+    flex: 1 1 40%;
+    padding-left: 30px;
+  }
+`;
+
+const FeaturedTitle = Styled.h3`
+  font-weight: 500;
+  line-height: 1.4;
+
+  a {
+    text-decoration: none;
+  }
+`;
+
+const FeaturedDate = Styled.div`
+  display: block;
+  margin-bottom: 16px;
+  line-height: 1;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: $color-dark-gray;
+`;
 
 const FeaturedExcerpt = Styled.p``;
 
