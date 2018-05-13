@@ -15,11 +15,12 @@ const Header = () => (
 
 const SiteHeader = Styled.header`
   padding: 20px 0;
-  margin-bottom: 40px;
+  margin: 0 auto 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  max-width: 960px;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;

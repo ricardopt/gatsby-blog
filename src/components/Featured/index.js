@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import Button from '../Button';
 import Img from 'gatsby-image';
 import Styled from 'styled-components';
 import Eyebrow from '../Eyebrow';
@@ -8,79 +9,105 @@ import { colors } from '../../colors';
 const Featured = ({ featuredPosts }) => {
 	return (
 		<FeaturedWrapper>
-			<Eyebrow>Featured Post</Eyebrow>
 			{featuredPosts.map(({ node }) => (
-				<div key={node.id}>
+				<FeaturedInner key={node.id}>
 					<FeaturedPost>
 						<FeaturedImage>
 							<Img sizes={node.frontmatter.featuredImage.childImageSharp.sizes} />
 						</FeaturedImage>
 
 						<FeaturedText>
-							<FeaturedTitle>
-								<Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
-							</FeaturedTitle>
-
+							<Eyebrow>Featured Post</Eyebrow>
 							<FeaturedDate
 								className="blog-post__date"
 								dangerouslySetInnerHTML={{ __html: node.frontmatter.date }}
 							/>
+							<FeaturedTitle>
+								<Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
+							</FeaturedTitle>
 
 							<FeaturedExcerpt dangerouslySetInnerHTML={{ __html: node.frontmatter.excerpt }} />
+							<StyledLink href={node.frontmatter.path}>Read full article</StyledLink>
 						</FeaturedText>
 					</FeaturedPost>
-				</div>
+				</FeaturedInner>
 			))}
 		</FeaturedWrapper>
 	);
 };
 
 const FeaturedWrapper = Styled.section`
-  padding-top: 30px;
-  border-top: 1px solid $color-dark-gray;
-`;
-
-const FeaturedHeading = Styled.h3`
-  display: inline-block;
-  letter-spacing: 0.2em;
-  line-height: 1;
-  color: $color-black;
-  padding-bottom: 2px;
-  border-bottom: 4px solid $color-black;
-  text-transform: uppercase;
-  font-size: 1.5rem;
-`;
-
-const FeaturedPost = Styled.article`
-  display: flex;
-  flex-direction: column;
+  padding: 5rem 0;
+  background: ${colors.lightGray};
 
   @media screen and (min-width: 768px) {
-    flex-direction: row;
+    margin-left: 8rem;
+    padding-top: 12rem;
+    padding-bottom: 5rem;
   }
 `;
 
-const FeaturedImage = Styled.div`
-  flex: 1 1 auto;
+const FeaturedInner = Styled.div`
+  max-width: 960px;
+  margin: 0 auto;
+`;
 
-  @media screen and (min-width: 740px) {
-    flex: 1 1 40%;
+const FeaturedPost = Styled.article`
+  position: relative;
+`;
+
+const FeaturedImage = Styled.div`
+  @media screen and (min-width: 768px) {
+    margin-left: 8rem;
   }
 `;
 
 const FeaturedText = Styled.div`
-  flex: 1 1 auto;
-  padding: 0;
+  padding: 2rem;
+  background: ${colors.white};
 
-  @media screen and (min-width: 740px) {
-    flex: 1 1 40%;
-    padding-left: 30px;
+  span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    padding: 6rem 3rem 3rem;
+    top: -6rem;
+    width: 500px;
+
+  }
+`;
+
+const StyledLink = Styled.a`
+  display: inline-block;
+  padding: .8rem 1.4rem;
+  border: 2px solid ${colors.black};
+  color: ${colors.black};
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 1rem auto 0;
+  letter-spacing: 0.2em;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+
+  &:hover {
+    border-color: ${colors.black};
+    background: ${colors.black};
+    color: ${colors.white};
   }
 `;
 
 const FeaturedTitle = Styled.h3`
   font-weight: 500;
   line-height: 1.4;
+  text-transform: uppercase;
 
   a {
     text-decoration: none;
@@ -89,11 +116,21 @@ const FeaturedTitle = Styled.h3`
 
 const FeaturedDate = Styled.div`
   display: block;
+  letter-spacing: 0.15em;
+  font-weight: 500;
   margin-bottom: 16px;
   line-height: 1;
   font-size: 1.4rem;
   text-transform: uppercase;
-  color: $color-dark-gray;
+
+  &::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background: ${colors.black};
+    display: block;
+    margin: 2rem 0;
+  }
 `;
 
 const FeaturedExcerpt = Styled.p`

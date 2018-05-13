@@ -23,12 +23,12 @@ const HeroComponent = Styled.section`
   align-items: center;
   justify-content: center;
   margin-top: 80px;
-  border-bottom: 1px solid ${colors.darkGray};
 `;
 
 const HeroHeading = Styled.h1`
   font-size: 7rem;
   text-align: center;
+  text-transform: uppercase;
 `;
 
 const HeroSubheading = Styled.h2`

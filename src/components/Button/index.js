@@ -9,17 +9,18 @@ export default Button;
 
 const PrimaryButton = Styled.a`
   display: inline-block;
-  padding: 8px 25px;
-  background: ${colors.white};
+  padding: 1rem 1.4rem;
   border: 2px solid ${colors.black};
   color: ${colors.black};
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
   font-size: 1.4rem;
+  font-weight: 500;
   text-align: center;
   margin: 30px auto;
-  transition: all 0.3s ease-in-out;
+  letter-spacing: 0.2em;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
 
   &:hover {
     border-color: ${colors.black};

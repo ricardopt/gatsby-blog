@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import Styled from 'styled-components';
+import { colors } from '../../colors';
 
 export default function Tags({ list = [] }) {
 	return (
@@ -26,19 +27,18 @@ const TagItem = Styled.li`
 `;
 
 const TagLink = Styled.a`
-  padding: 6px 8px;
+  padding: 6px 10px;
   display: block;
-  background: #eee;
+  background: ${colors.gray};
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.3em;
   white-space: nowrap;
 
   &:hover {
-    background: #000;
-    color: #fff;
+    background: ${colors.lightGray};
   }
 `;

@@ -1,8 +1,8 @@
 @import './utils/utils';
 
 body {
-  max-width: 960px;
-  margin: 0 20px;
+  // max-width: 960px;
+  margin: 0;
 
   @media screen and(min-width: 960px + 40px) {
     margin: 0 auto;
