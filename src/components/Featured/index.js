@@ -62,7 +62,7 @@ const FeaturedImage = Styled.div`
 `;
 
 const FeaturedText = Styled.div`
-  padding: 2rem;
+  padding: 2rem 0;
   background: ${colors.white};
 
   span {
