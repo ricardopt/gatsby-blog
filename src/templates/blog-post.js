@@ -8,30 +8,30 @@ export default function Template({ data }) {
 	const { markdownRemark: post } = data;
 	return (
 		<BlogSection>
-			<Helmet title={`Mario Hernandez - ${post.frontmatter.title}`} />{' '}
-			<div className="blog-post">
-				<h1
-					className="blog-post__title"
+			<Helmet title={`Mario Hernandez - ${post.frontmatter.title}`} />
+			<BlogPost>
+				<BlogPostTitle
 					dangerouslySetInnerHTML={{
 						__html: post.frontmatter.title
 					}}
 				/>
-				<div
-					className="blog-post__date"
+
+				<BlogPostDate
 					dangerouslySetInnerHTML={{
 						__html: post.frontmatter.date
 					}}
 				/>
-				<div
-					className="blog-post-content"
+
+				<BlogPostBody
 					dangerouslySetInnerHTML={{
 						__html: post.html
 					}}
 				/>
-				<div className="blog-post__tags">
-					<Tags list={post.frontmatter.tags || []} />{' '}
-				</div>{' '}
-			</div>{' '}
+
+				<BlogPostTags>
+					<Tags list={post.frontmatter.tags || []} />
+				</BlogPostTags>
+			</BlogPost>
 		</BlogSection>
 	);
 }
@@ -59,7 +59,17 @@ export const pageQuery = graphql`
 `;
 
 const BlogSection = Styled.section`
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 1rem;
-  margin-bottom: 3rem;
+  max-width: 960px;
+  margin: 0 auto 4rem;
 `;
+
+const BlogPost = Styled.article`
+`;
+
+const BlogPostTitle = Styled.h1``;
+
+const BlogPostDate = Styled.p``;
+
+const BlogPostBody = Styled.div``;
+
+const BlogPostTags = Styled.div``;

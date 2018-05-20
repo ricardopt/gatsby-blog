@@ -2,7 +2,7 @@
 path: "/blog/the-struggle"
 date: "2018-04-16T17:12:33.962Z"
 title: "Struggling to stay up to date as a developer"
-tags: ['development', 'learning', 'keeping up']
+tags: ['learning', 'keeping up']
 draft: false
 featured: true
 featuredImage: "./struggle.jpg"

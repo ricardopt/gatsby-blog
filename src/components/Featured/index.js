@@ -38,10 +38,9 @@ const Featured = ({ featuredPosts }) => {
 
 const FeaturedWrapper = Styled.section`
   padding: 5rem 0;
-  background: ${colors.lightGray};
 
   @media screen and (min-width: 768px) {
-    margin-left: 8rem;
+    background: ${colors.lightGray};
     padding-top: 12rem;
     padding-bottom: 5rem;
   }
@@ -69,7 +68,7 @@ const FeaturedText = Styled.div`
   span {
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     margin: 0;
   }
 
@@ -79,6 +78,10 @@ const FeaturedText = Styled.div`
     top: -6rem;
     width: 500px;
 
+    span {
+      right: 0;
+      left: inherit;
+    }
   }
 `;
 
