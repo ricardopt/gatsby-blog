@@ -24,6 +24,7 @@ const SiteHeader = Styled.header`
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
+    padding: 20px;
   }
 `;
 

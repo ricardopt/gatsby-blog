@@ -55,6 +55,11 @@ const FeaturedInner = Styled.div`
     padding-left: 20px;
     padding-right: 20px;
   }
+
+  @media screen and (min-width: 1000px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;
 
 const FeaturedPost = Styled.article`

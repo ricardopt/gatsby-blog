@@ -41,7 +41,7 @@ const IndexBlog = ({ data }) => (
 export default IndexBlog;
 
 const BlogWrapper = Styled.section`
-  padding: 5rem 0;
+  padding: 0;
 
   @media screen and (min-width: 768px) {
     background: ${colors.lightGray};
@@ -59,6 +59,11 @@ const BlogSection = Styled.section`
   @media screen and (min-width: 768px) {
     margin: 0 auto 12rem;
     padding-bottom: 8rem;
+
+    &:last-child {
+      padding-bottom: 0;
+      margin-bottom: 4rem;
+    }
   }
 
   &:last-child {
@@ -69,11 +74,29 @@ const BlogSection = Styled.section`
 
 const BlogPostItem = Styled.article`
   position: relative;
+
+  @media screen and (min-width: 768px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;
 
 const PageHeading = Styled.h1`
   max-width: 960px;
   margin: 0 auto 4rem;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 20px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    margin-left: auto;
+  }
 `;
 
 const BlogPostImage = Styled.div`
