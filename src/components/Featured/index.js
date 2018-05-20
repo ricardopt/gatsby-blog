@@ -113,6 +113,10 @@ const FeaturedTitle = Styled.h3`
   line-height: 1.4;
   text-transform: uppercase;
 
+  @media screen and (min-width: 768px) {
+    font-size: 2.4rem;
+  }
+
   a {
     text-decoration: none;
   }

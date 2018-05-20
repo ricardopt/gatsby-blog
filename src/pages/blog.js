@@ -119,10 +119,14 @@ const BlogPostDate = Styled.div`
 `;
 
 const BlogPostTitle = Styled.h2`
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: 500;
   line-height: 1.4;
   text-transform: uppercase;
+
+  @media screen and (min-width: 768px) {
+    font-size: 2.4rem;
+  }
 
   a {
     text-decoration: none;
