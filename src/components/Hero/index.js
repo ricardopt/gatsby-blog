@@ -22,17 +22,30 @@ const HeroComponent = Styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 80px;
+  margin-top: 5rem;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 8rem;
+  }
 `;
 
 const HeroHeading = Styled.h1`
-  font-size: 7rem;
+  font-size: 5rem;
   text-align: center;
   text-transform: uppercase;
+
+  @media screen and (min-width: 768px) {
+    font-size: 7rem;
+  }
 `;
 
 const HeroSubheading = Styled.h2`
   text-align: center;
+  font-size: 2.5rem;
+
+  @media screen and (min-width: 768px) {
+    font-size: 4rem;
+  }
 `;
 
 export default Hero;

@@ -50,9 +50,14 @@ const BlogWrapper = Styled.section`
 
 const BlogSection = Styled.section`
   max-width: 960px;
-  margin: 0 auto 12rem;
-  padding-bottom: 8rem;
+  margin: 0 auto 4rem;
+  padding-bottom: 2rem;
   border-bottom: 1px solid #ccc;
+
+  @media screen and (min-width: 768px) {
+    margin: 0 auto 12rem;
+    padding-bottom: 8rem;
+  }
 
   &:last-child {
     border: 0;
@@ -120,12 +125,13 @@ const BlogPostDate = Styled.div`
 
 const BlogPostTitle = Styled.h2`
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.4;
   text-transform: uppercase;
 
   @media screen and (min-width: 768px) {
     font-size: 2.4rem;
+    font-weight: 500;
   }
 
   a {
