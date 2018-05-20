@@ -93,7 +93,7 @@ const StyledLink = Styled.a`
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 500;
   text-align: center;
   margin: 1rem auto 0;
@@ -108,6 +108,7 @@ const StyledLink = Styled.a`
 `;
 
 const FeaturedTitle = Styled.h3`
+  font-size: 1.8rem;
   font-weight: 500;
   line-height: 1.4;
   text-transform: uppercase;
