@@ -3,6 +3,7 @@ import Link from 'gatsby-link';
 import Img from 'gatsby-image';
 import Styled from 'styled-components';
 
+import Footer from '../components/Footer';
 import Tags from '../components/Tags';
 import Button from '../components/Button';
 import Eyebrow from '../components/Eyebrow';
@@ -33,6 +34,7 @@ const IndexBlog = ({ data }) => (
 				</BlogSection>
 			))}
 		</BlogWrapper>
+		<Footer />
 	</React.Fragment>
 );
 

@@ -3,35 +3,39 @@ import Helmet from 'react-helmet';
 import GatsbyLink from 'gatsby-link';
 import Tags from '../components/Tags';
 import Styled from 'styled-components';
+import Footer from '../components/Footer';
 
 export default function Template({ data }) {
 	const { markdownRemark: post } = data;
 	return (
 		<BlogSection>
-			<Helmet title={`Mario Hernandez - ${post.frontmatter.title}`} />
-			<BlogPost>
-				<BlogPostTitle
-					dangerouslySetInnerHTML={{
-						__html: post.frontmatter.title
-					}}
-				/>
+			<BlogInner>
+				<Helmet title={`Mario Hernandez - ${post.frontmatter.title}`} />
+				<BlogPost>
+					<BlogPostTitle
+						dangerouslySetInnerHTML={{
+							__html: post.frontmatter.title
+						}}
+					/>
 
-				<BlogPostDate
-					dangerouslySetInnerHTML={{
-						__html: post.frontmatter.date
-					}}
-				/>
+					<BlogPostDate
+						dangerouslySetInnerHTML={{
+							__html: post.frontmatter.date
+						}}
+					/>
 
-				<BlogPostBody
-					dangerouslySetInnerHTML={{
-						__html: post.html
-					}}
-				/>
+					<BlogPostBody
+						dangerouslySetInnerHTML={{
+							__html: post.html
+						}}
+					/>
 
-				<BlogPostTags>
-					<Tags list={post.frontmatter.tags || []} />
-				</BlogPostTags>
-			</BlogPost>
+					<BlogPostTags>
+						<Tags list={post.frontmatter.tags || []} />
+					</BlogPostTags>
+				</BlogPost>
+			</BlogInner>
+			<Footer />
 		</BlogSection>
 	);
 }
@@ -58,7 +62,9 @@ export const pageQuery = graphql`
 	}
 `;
 
-const BlogSection = Styled.section`
+const BlogSection = Styled.div``;
+
+const BlogInner = Styled.section`
   max-width: 960px;
   margin: 0 auto 4rem;
 `;

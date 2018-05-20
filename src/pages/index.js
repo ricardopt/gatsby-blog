@@ -1,11 +1,13 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import Featured from '../components/Featured';
+import Footer from '../components/Footer';
 
 const Home = ({ data }) => (
 	<React.Fragment>
 		<Hero />
 		<Featured featuredPosts={data.allMarkdownRemark.edges} />
+		<Footer />
 	</React.Fragment>
 );
 
