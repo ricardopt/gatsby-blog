@@ -43,12 +43,18 @@ const FeaturedWrapper = Styled.section`
     background: ${colors.lightGray};
     padding-top: 12rem;
     padding-bottom: 5rem;
+    margin: 0;
   }
 `;
 
 const FeaturedInner = Styled.div`
   max-width: 960px;
   margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 `;
 
 const FeaturedPost = Styled.article`
@@ -62,7 +68,7 @@ const FeaturedImage = Styled.div`
 `;
 
 const FeaturedText = Styled.div`
-  padding: 2rem 0;
+  padding: 2rem 20px;
   background: ${colors.white};
 
   span {

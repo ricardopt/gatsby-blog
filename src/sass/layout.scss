@@ -1,9 +1,5 @@
 @import './utils/utils';
 
 body {
-  margin: 0 20px;
-
-  @media screen and(min-width: 768px + 40px) {
-    margin: 0 auto;
-  }
+  margin: 0;
 }

@@ -83,7 +83,7 @@ const BlogPostImage = Styled.div`
 `;
 
 const BlogPostContent = Styled.div`
-  padding: 2rem 0;
+  padding: 2rem 20px;
   background: ${colors.white};
 
   span {

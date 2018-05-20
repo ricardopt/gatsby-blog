@@ -66,7 +66,11 @@ const BlogSection = Styled.div``;
 
 const BlogInner = Styled.section`
   max-width: 960px;
-  margin: 0 auto 4rem;
+  margin: 0 20px 4rem;
+
+  @media screen and (min-width: 768px) {
+    margin: 0 auto 4rem;
+  }
 `;
 
 const BlogPost = Styled.article`
