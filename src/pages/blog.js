@@ -88,14 +88,15 @@ const BlogPostItem = Styled.article`
 
 const PageHeading = Styled.h1`
   max-width: 960px;
-  margin: 0 auto 4rem;
+  margin: 0 20px 2rem;
+  font-size: 3rem;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
 
   @media screen and (min-width: 768px) {
-    margin-left: 20px;
-  }
-
-  @media screen and (min-width: 1000px) {
-    margin-left: auto;
+    margin: 0 auto 2rem;
+    font-size: 4rem;
   }
 `;
 
