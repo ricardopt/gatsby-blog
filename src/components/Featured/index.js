@@ -37,7 +37,7 @@ const Featured = ({ featuredPosts }) => {
 };
 
 const FeaturedWrapper = Styled.section`
-  padding: 5rem 0;
+  padding: 0 0 4rem;
 
   @media screen and (min-width: 768px) {
     background: ${colors.lightGray};

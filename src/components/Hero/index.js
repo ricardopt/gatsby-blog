@@ -11,7 +11,7 @@ const Hero = props => {
 				<HeroHeading>I build websites</HeroHeading>
 				<HeroSubheading>and speak at tech conferences</HeroSubheading>
 				<SocialIcons />
-				<Button />
+				{/* <Button /> */}
 			</HeroComponent>
 		</React.Fragment>
 	);
@@ -22,10 +22,12 @@ const HeroComponent = Styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 
   @media screen and (min-width: 768px) {
     margin-top: 8rem;
+    margin-bottom: 6rem;
   }
 `;
 
