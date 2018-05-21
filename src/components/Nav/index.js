@@ -17,11 +17,6 @@ const Nav = props => {
 						Blog
 					</Link>
 				</NavItem>
-				<NavItem>
-					<Link exact to={'/about'} activeClassName="active">
-						About
-					</Link>
-				</NavItem>
 			</NavList>
 		</MainNav>
 	);
