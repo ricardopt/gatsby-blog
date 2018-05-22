@@ -49,7 +49,11 @@ export default function Tags({ pathContext }) {
 
 const TagsPage = Styled.article`
   max-width: 960px;
-  margin: 0 auto;
+  margin: 0 20px;
+
+  @media screen and (min-width: 1000px) {
+    margin: 0 auto;
+  }
 `;
 
 const TagsHeading = Styled.h1`
@@ -76,7 +80,11 @@ const TaggedItem = Styled.h2``;
 
 const AllTagsWrapper = Styled.section`
   max-width: 960px;
-  margin: 0 auto;
+  margin: 0 20px;
+
+  @media screen and (min-width: 1000px) {
+    margin: 0 auto;
+  }
 `;
 
 const AllTagsHeading = Styled.h4`
