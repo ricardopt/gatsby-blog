@@ -68,7 +68,6 @@ export const pageQuery = graphql`
 	}
 `;
 
-const BlogPostImage = Styled.div``;
 const BlogSection = Styled.div``;
 
 const BlogInner = Styled.section`
@@ -95,6 +94,8 @@ const BlogPostTitle = Styled.h1`
     font-size: 4rem;
   }
 `;
+
+const BlogPostImage = Styled.div``;
 
 const BlogPostDate = Styled.p`
   display: block;
