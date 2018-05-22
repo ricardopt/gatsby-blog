@@ -1,43 +1,122 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import Styled from 'styled-components';
+import { colors } from '../colors';
+import Eyebrow from '../components/Eyebrow';
 
 export default function Tags({ pathContext }) {
 	const { posts, post, tag } = pathContext;
 	if (tag) {
 		return (
-			<div>
-				<h1>
-					{post.length} post{post.length === 1 ? '' : 's'} tagged with <span className="tag-name">{tag}</span>
-				</h1>
-				<ul>
-					{post.map(({ id, frontmatter, excerpt, fields }) => {
+			<TagsPage>
+				<TagsHeading>
+					There {post.length === 1 ? 'is' : 'are'} <span>{post.length}</span> post{post.length === 1
+						? ''
+						: 's'}{' '}
+					tagged with <span>{tag}</span>
+				</TagsHeading>
+				<TagsList>
+					{post.map(({ id, frontmatter, fields }) => {
 						return (
-							<li key={id}>
-								<h1>
-									<Link to={frontmatter.path}>{frontmatter.title}</Link>
-								</h1>
-								<p>{excerpt}</p>
-							</li>
+							<TagsListItem key={id}>
+								<TaggedItem>
+									<TagLink to={frontmatter.path}>{frontmatter.title}</TagLink>
+								</TaggedItem>
+							</TagsListItem>
 						);
 					})}
-				</ul>
+				</TagsList>
 				<Link to="/tags">All tags</Link>
-			</div>
+			</TagsPage>
 		);
 	}
 	return (
-		<div>
-			<h1>Tags</h1>
-			<ul className="tags">
+		<AllTagsWrapper>
+			<AllTagsHeading>Tags</AllTagsHeading>
+			<AllTagsList>
 				{Object.keys(posts).map(tagName => {
 					const tags = posts[tagName];
 					return (
-						<li key={tagName}>
-							<Link to={`/tags/${tagName}`}>{tagName}</Link>
-						</li>
+						<AllTagsListItem key={tagName}>
+							<TagItem to={`/tags/${tagName}`}>{tagName}</TagItem>
+						</AllTagsListItem>
 					);
 				})}
-			</ul>
-		</div>
+			</AllTagsList>
+		</AllTagsWrapper>
 	);
 }
+
+const TagsPage = Styled.article`
+  max-width: 960px;
+  margin: 0 auto;
+`;
+
+const TagsHeading = Styled.h1`
+  font-size: 2.4rem;
+  color: ${colors.midGray};
+
+  span {
+    font-weight: bold;
+    color: ${colors.black};
+  }
+`;
+
+const TagsList = Styled.ul`
+  list-style: none;
+  margin: 0 0 4rem;
+  padding: 0;
+`;
+
+const TagsListItem = Styled.li`
+  padding: 4px 0;
+`;
+
+const TaggedItem = Styled.h2``;
+
+const AllTagsWrapper = Styled.section`
+  max-width: 960px;
+  margin: 0 auto;
+`;
+
+const AllTagsHeading = Styled.h4`
+  font-size: 2.4rem;
+`;
+
+const AllTagsList = Styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+`;
+
+const AllTagsListItem = Styled.li`
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+`;
+
+const TagLink = Styled(Link)`
+  text-transform: uppercase;
+  font-size: 2rem;
+
+  &:hover {
+    text-decoration: none;
+  }
+`;
+
+const TagItem = Styled(Link)`
+  padding: 6px 10px;
+  display: inline-block;
+  background: ${colors.gray};
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.3em;
+  white-space: nowrap;
+
+  &:hover {
+    background: ${colors.lightGray};
+  }
+`;
