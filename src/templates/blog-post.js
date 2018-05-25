@@ -14,28 +14,33 @@ export default function Template({ data }) {
 			<BlogInner>
 				<Helmet title={`Mario Hernandez - ${post.frontmatter.title}`} />
 				<BlogPost>
+					<a
+						href="https://twitter.com/intent/tweet/
+     ?text=Check%20out%20this%20website!
+     &url=http%3A%2F%2Fmariohernandez.io%2F
+     &via=imariohernandez"
+						target="_blank"
+					>
+						Share on Twitter
+					</a>">
 					<BlogPostTitle
 						dangerouslySetInnerHTML={{
 							__html: post.frontmatter.title
 						}}
 					/>
-
 					<BlogPostDate
 						dangerouslySetInnerHTML={{
 							__html: post.frontmatter.date
 						}}
 					/>
-
 					<BlogPostImage>
 						<Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes} />
 					</BlogPostImage>
-
 					<BlogPostBody
 						dangerouslySetInnerHTML={{
 							__html: post.html
 						}}
 					/>
-
 					<BlogPostTags>
 						<Tags list={post.frontmatter.tags || []} />
 					</BlogPostTags>
