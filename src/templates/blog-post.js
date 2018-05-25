@@ -14,7 +14,7 @@ export default function Template({ data }) {
 			<BlogInner>
 				<Helmet title={`Mario Hernandez - ${post.frontmatter.title}`} />
 				<BlogPost>
-					<a
+					{/* <a
 						href="https://twitter.com/intent/tweet/
      ?text=Check%20out%20this%20website!
      &url=http%3A%2F%2Fmariohernandez.io%2F
@@ -22,7 +22,7 @@ export default function Template({ data }) {
 						target="_blank"
 					>
 						Share on Twitter
-					</a>">
+					</a> */}
 					<BlogPostTitle
 						dangerouslySetInnerHTML={{
 							__html: post.frontmatter.title
@@ -45,10 +45,10 @@ export default function Template({ data }) {
 						<Tags list={post.frontmatter.tags || []} />
 					</BlogPostTags>
 				</BlogPost>
-				<a href="
+				{/* <a href="
         https://twitter.com/intent/tweet?text=share&url=http%3A%2F%2Fmariohernandez.io%2Fvia=imariohernandez">
 					Share this
-				</a>
+				</a> */}
 			</BlogInner>
 			<Footer />
 		</BlogSection>
