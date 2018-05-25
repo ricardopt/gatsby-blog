@@ -40,11 +40,9 @@ export default function Template({ data }) {
 						<Tags list={post.frontmatter.tags || []} />
 					</BlogPostTags>
 				</BlogPost>
-				<a href="https://twitter.com/share?
-  url=http%3A%2F%2Fmariohernandez.io%2F&
-  via=imariohernandez&
-  text=custom%20share%20text">
-					Tweet
+				<a href="
+        https://twitter.com/intent/tweet?text=share&url=http%3A%2F%2mariohernandez.io%2F&via=imariohernandez">
+					Share this
 				</a>
 			</BlogInner>
 			<Footer />
