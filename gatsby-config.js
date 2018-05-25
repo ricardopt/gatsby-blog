@@ -72,6 +72,12 @@ module.exports = {
         path: `${__dirname}/src/img/`
       }
     },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `http://mariohernandez.io`
+      }
+    },
     `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
