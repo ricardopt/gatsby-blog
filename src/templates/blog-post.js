@@ -41,7 +41,7 @@ export default function Template({ data }) {
 					</BlogPostTags>
 				</BlogPost>
 				<a href="
-        https://twitter.com/intent/tweet?text=share&url=http%3A%2F%2mariohernandez.io%2F&via=imariohernandez">
+        https://twitter.com/intent/tweet?text=share&url=http%3A%2F%2Fmariohernandez.io%2Fvia=imariohernandez">
 					Share this
 				</a>
 			</BlogInner>
