@@ -36,10 +36,10 @@ export default function Template({ data }) {
 						<Tags list={post.frontmatter.tags || []} />
 					</BlogPostTags>
 				</BlogPost>
-				<a href="
+				{/* <a href="
           https://twitter.com/intent/tweet?url=http%3A%2F%2Fmariohernandez.io&via=imariohernandez&text=Testing%20">
 					Share this
-				</a>
+				</a> */}
 			</BlogInner>
 			<Footer />
 		</BlogSection>
