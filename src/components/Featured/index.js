@@ -42,7 +42,7 @@ const FeaturedWrapper = Styled.section`
   @media screen and (min-width: 768px) {
     background: ${colors.lightGray};
     padding-top: 12rem;
-    padding-bottom: 5rem;
+    padding-bottom: 6rem;
     margin: 0;
   }
 `;

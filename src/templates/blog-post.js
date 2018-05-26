@@ -19,27 +19,27 @@ export default function Template({ data }) {
 							__html: post.frontmatter.title
 						}}
 					/>
+
 					<BlogPostDate
 						dangerouslySetInnerHTML={{
 							__html: post.frontmatter.date
 						}}
 					/>
+
 					<BlogPostImage>
 						<Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes} />
 					</BlogPostImage>
+
 					<BlogPostBody
 						dangerouslySetInnerHTML={{
 							__html: post.html
 						}}
 					/>
+
 					<BlogPostTags>
 						<Tags list={post.frontmatter.tags || []} />
 					</BlogPostTags>
 				</BlogPost>
-				{/* <a href="
-          https://twitter.com/intent/tweet?url=http%3A%2F%2Fmariohernandez.io&via=imariohernandez&text=Testing%20">
-					Share this
-				</a> */}
 			</BlogInner>
 			<Footer />
 		</BlogSection>
