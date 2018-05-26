@@ -21,15 +21,8 @@ const Footer = props => {
 const FooterComponent = Styled.section`
   background: ${colors.black};
   padding: 1rem;
-  // margin-left: -20px;
-  // margin-right: -20px;
   display: flex;
   flex-direction: column;
-
-  // @media screen and (min-width: 808px) {
-  //   margin-left: 0;
-  //   margin-right: 0;
-  // }
 `;
 
 const FooterInner = Styled.div`
