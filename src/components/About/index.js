@@ -35,14 +35,14 @@ const About = props => {
 };
 
 const AboutWrapper = Styled.section`
-  max-width: 768px;
-  margin: 0 20px 40px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
   display: flex;
   flex-direction: column;
+  max-width: 768px;
+  margin: 0 20px 40px;
   position: relative;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 808px) {
     flex-direction: row;
     margin: 0 auto 80px;
   }

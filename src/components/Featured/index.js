@@ -71,6 +71,14 @@ const FeaturedImage = Styled.div`
   @media screen and (min-width: 768px) {
     margin-left: 8rem;
   }
+
+  img {
+    transition: all 0.5s ease-in-out !important;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 `;
 
 const FeaturedText = Styled.div`
