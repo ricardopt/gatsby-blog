@@ -104,6 +104,16 @@ const BlogPostImage = Styled.div`
   @media screen and (min-width: 768px) {
     margin-left: 8rem;
   }
+
+  // Using important to override inline styles added
+  // by gatsby-image plugin.
+  img {
+    transition: all 0.5s ease-in-out !important;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 `;
 
 const BlogPostContent = Styled.div`

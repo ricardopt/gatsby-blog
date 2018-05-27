@@ -72,6 +72,8 @@ const FeaturedImage = Styled.div`
     margin-left: 8rem;
   }
 
+  // Using important to override inline styles added
+  // by gatsby-image plugin.
   img {
     transition: all 0.5s ease-in-out !important;
 

@@ -96,15 +96,9 @@ const BlogPostTitle = Styled.h1`
 `;
 
 const BlogPostImage = Styled.div`
+  // Using important to override inline styles added
+  // by gatsby-image plugin.
   img {
-    // transition-duration: 0.5s;
-    // transition-timing-function: initial;
-    // transition-property: opacity;
-    // opacity: 1;
-    // width: 100%;
-    // height: 100%;
-    // object-fit: cover;
-    // object-position: center center;
     transition: all 0.5s ease-in-out !important;
 
     &:hover {
