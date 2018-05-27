@@ -1,8 +1,8 @@
 import React from 'react';
 import Styled from 'styled-components';
-import Button from '../Button';
 import SocialIcons from '../SocialIcons';
 import { colors } from '../../colors';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 const Hero = props => {
 	return (
@@ -11,7 +11,9 @@ const Hero = props => {
 				<HeroHeading>I build websites</HeroHeading>
 				<HeroSubheading>and speak at tech conferences</HeroSubheading>
 				<SocialIcons />
-				{/* <Button /> */}
+				<AboutButton>
+					<AnchorLink href="#about">More about me</AnchorLink>
+				</AboutButton>
 			</HeroComponent>
 		</React.Fragment>
 	);
@@ -51,4 +53,27 @@ const HeroSubheading = Styled.h2`
   }
 `;
 
+const AboutButton = Styled.div`
+  a {
+    display: inline-block;
+    padding: 0.8rem 1.4rem;
+    border: 2px solid ${colors.black};
+    color: ${colors.black};
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    margin: 30px auto;
+    letter-spacing: 0.2em;
+    transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+  
+    &:hover {
+      border-color: ${colors.black};
+      background: ${colors.black};
+      color: ${colors.white};
+    }
+  }
+`;
 export default Hero;
