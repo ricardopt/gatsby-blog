@@ -41,6 +41,7 @@ const NavItem = Styled.li`
     text-transform: uppercase;
     color: ${colors.black};
     font-size: 1.5rem;
+    font-weight: normal;
     transition: color 0.3s ease-in-out;
   
     &.active,

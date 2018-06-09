@@ -71,8 +71,13 @@ template {
 a {
   background-color: transparent;
   color: $color-black;
+  font-weight: bold;
   text-decoration: underline;
   -webkit-text-decoration-skip: objects;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 a:active,
@@ -336,14 +341,9 @@ dd {
 }
 
 p {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  color: $color-dark-gray;
 }
 
 figure {
@@ -384,8 +384,6 @@ table {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  font-size: 1rem;
-  line-height: 1.45rem;
   border-collapse: collapse;
   width: 100%;
 }
@@ -402,16 +400,48 @@ fieldset {
 }
 
 blockquote {
-  margin-left: 1.45rem;
-  margin-right: 1.45rem;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+  max-width: 640px;
+  margin: 50px auto 40px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 3rem;
+  padding: 20px;
+  position: relative;
+  color: lighten($color-dark-gray, 15%);
+
+  &::before {
+    content: '"';
+    display: block;
+    font-size: 140px;
+    position: absolute;
+    left: -10px;
+    top: -90px;
+    color: lighten($color-dark-gray, 15%);
+    font-weight: 700;
+    font-family: cursive, serif;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 20px 0 20px 80px;
+    border-left: 4px solid $color-light-gray;
+    text-align: left;
+    max-width: 768px;
+    margin-top: 50px;
+  }
 }
 
+cite {
+  display: block;
+  text-align: right;
+  font-size: 14px;
+  margin-right: 40px;
+  text-transform: uppercase;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+    helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
 form {
   margin-left: 0;
   margin-right: 0;

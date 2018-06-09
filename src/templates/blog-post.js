@@ -68,6 +68,7 @@ export const pageQuery = graphql`
 	}
 `;
 
+const ShareLink = Styled.a``;
 const BlogSection = Styled.div``;
 
 const BlogInner = Styled.section`
@@ -132,6 +133,16 @@ const BlogPostDate = Styled.p`
 
 const BlogPostBody = Styled.div`
   padding: 2rem 20px 0;
+
+  // This table cell dimensions are for post
+  // about building a card component.
+  tbody tr td:first-child {
+    width: 160px;
+  }
+
+  tbody tr td:nth-child(2) {
+    width: 215px;
+  }
 `;
 
 const BlogPostTags = Styled.div`

@@ -4,7 +4,7 @@ date: "2018-05-20T17:12:33.962Z"
 title: "Running a training workshop"
 tags: ['training']
 draft: false
-featured: true
+featured: false
 featuredImage: "./training-workshop.jpg"
 excerpt: "For the past couple of years I have been running private and community driven training workshops and I'd like to share my experiences and lessons learned."
 ---
