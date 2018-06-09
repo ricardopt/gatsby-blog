@@ -11,10 +11,10 @@ const About = props => {
 	return (
 		<React.Fragment>
 			<AboutHeading id="about">About Me</AboutHeading>
-			<AboutQuote>
+			{/* <AboutQuote>
 				Sometimes there just aren't enough rocks.
 				<AboutCite>—Forrest Gump</AboutCite>
-			</AboutQuote>
+			</AboutQuote> */}
 			<AboutWrapper>
 				<AboutHeadshot>
 					<img src={headshot} alt={`Mario Hernandez`} />
@@ -47,18 +47,7 @@ const AboutWrapper = Styled.section`
 
   @media screen and (min-width: 808px) {
     flex-direction: row;
-    margin: 80px auto;
-
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: -60px;
-      left: calc(50% - 80px);
-      width: 160px;
-      height: 5px;
-      background: ${colors.black};
-    }
+    margin: 20px auto 80px;
   }
 `;
 
