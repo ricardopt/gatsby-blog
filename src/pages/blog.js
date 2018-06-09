@@ -28,7 +28,7 @@ const IndexBlog = ({ data }) => (
 
 							<BlogPostExcerpt dangerouslySetInnerHTML={{ __html: node.frontmatter.excerpt }} />
 
-							<BlogPostButton href={node.frontmatter.path}>Read full article</BlogPostButton>
+							<BlogPostButton href={node.frontmatter.path}>Read the full post</BlogPostButton>
 						</BlogPostContent>
 					</BlogPostItem>
 				</BlogSection>

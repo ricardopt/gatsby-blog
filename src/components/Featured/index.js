@@ -27,7 +27,7 @@ const Featured = ({ featuredPosts }) => {
 							</FeaturedTitle>
 
 							<FeaturedExcerpt dangerouslySetInnerHTML={{ __html: node.frontmatter.excerpt }} />
-							<StyledLink href={node.frontmatter.path}>Read full post</StyledLink>
+							<StyledLink href={node.frontmatter.path}>Read the full post</StyledLink>
 						</FeaturedText>
 					</FeaturedPost>
 				</FeaturedInner>
