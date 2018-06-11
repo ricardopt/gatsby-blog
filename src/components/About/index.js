@@ -5,7 +5,7 @@ import img from 'gatsby-image';
 import Styled from 'styled-components';
 import { colors } from '../../colors';
 import SocialIcons from '../SocialIcons';
-import { join } from 'path';
+import Link from '../Link';
 
 const About = props => {
 	return (
@@ -21,12 +21,27 @@ const About = props => {
 						<AboutName> Mario Hernandez </AboutName>
 						<AboutTitle> Front - End Developer </AboutTitle>
 						<p>
-							I am a Front - End Developer and Speaker from Los Angeles where I live with my wife Damaris
-							and my two kids Diego and Valentina.
+							I help large and small organizations build and deploy their web systems. As a Front-End
+							Developer at
+							<Link to="https://mediacurrent.com" target="_blank">
+								Mediacurrent,
+							</Link>
+							I work with clients including NFL, WWE, VisitTheUSA, Olympus, Higher Ed, Government, and
+							more.
 						</p>
+
 						<p>
-							I conduct private and community - organized training workshops on various Front - End
-							topics.
+							I am frequent writer and speaker at web and open source conferences; co-host of the
+							Mediacurrent podcast; contributor of the
+							<Link to="https://www.drupal.org/project/simplify_menu" target="_blank">
+								simplify menu
+							</Link>
+							module and the
+							<Link to="https://www.drupal.org/node/2847582" target="_blank">
+								Out Of The Box
+							</Link>
+							initiative. I conduct private and community organized training workshops on all things
+							Drupal, Component Development and other front-end topics.
 						</p>
 					</AboutBio>
 				</AboutContent>
@@ -125,6 +140,18 @@ const AboutTitle = Styled.span`
   }
 `;
 
-const AboutBio = Styled.div``;
+const AboutBio = Styled.div`
+
+  @media screen and (min-width: 640px) {
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  a {
+    display: inline-block;
+    margin: 0 4px;
+  }
+`;
 
 export default About;
