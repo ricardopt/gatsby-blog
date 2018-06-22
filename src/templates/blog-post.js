@@ -83,9 +83,11 @@ const BlogPost = Styled.article`
 const BlogPostTitle = Styled.h1`
   width: calc(100% - 40px);
   margin: 0 auto 2rem;
+  font-size: 5rem;
 
   @media screen and (min-width: 768px) {
     width: 100%;
+    font-size: 8rem;
   }
 `;
 
