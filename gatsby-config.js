@@ -62,7 +62,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: ['merriweather:300,400,400i,700', `source sans pro\:300,400,400i,700`]
+        fonts: ['Playfair+Display:300,400,400i,700', `source sans pro\:300,400,400i,700`]
       }
     },
     {

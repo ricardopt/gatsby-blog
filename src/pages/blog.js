@@ -90,8 +90,6 @@ const PageHeading = Styled.h1`
   max-width: 960px;
   margin: 0 20px 20px;
   font-size: 3rem;
-  text-transform: uppercase;
-  line-height: 1;
   white-space: nowrap;
 
   @media screen and (min-width: 1000px) {
@@ -160,14 +158,10 @@ const BlogPostDate = Styled.div`
 `;
 
 const BlogPostTitle = Styled.h2`
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 1.4;
-  text-transform: uppercase;
+  font-size: 2.5rem;
 
   @media screen and (min-width: 768px) {
-    font-size: 2.4rem;
-    font-weight: 500;
+    font-size: 3.5rem;
   }
 
   a {

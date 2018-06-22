@@ -19,23 +19,19 @@ export default function Template({ data }) {
 							__html: post.frontmatter.title
 						}}
 					/>
-
 					<BlogPostDate
 						dangerouslySetInnerHTML={{
 							__html: post.frontmatter.date
 						}}
 					/>
-
 					<BlogPostImage>
 						<Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes} />
 					</BlogPostImage>
-
 					<BlogPostBody
 						dangerouslySetInnerHTML={{
 							__html: post.html
 						}}
 					/>
-
 					<BlogPostTags>
 						<Tags list={post.frontmatter.tags || []} />
 					</BlogPostTags>
@@ -87,12 +83,9 @@ const BlogPost = Styled.article`
 const BlogPostTitle = Styled.h1`
   width: calc(100% - 40px);
   margin: 0 auto 2rem;
-  font-size: 3rem;
-  text-transform: uppercase;
 
   @media screen and (min-width: 768px) {
     width: 100%;
-    font-size: 4rem;
   }
 `;
 

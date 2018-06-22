@@ -4,7 +4,8 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1.1;
+  font-family: 'Playfair Display', 'Times New Roman', Georgia, Times, serif;
+  line-height: 1.3;
   font-weight: 400;
   margin: 0 0 1.45rem;
   text-rendering: optimizeLegibility;
@@ -13,13 +14,11 @@ h6 {
 }
 
 h1 {
-  font-size: 5rem;
-  font-weight: 600;
+  font-size: 8rem;
 }
 
 h2 {
   font-size: 3rem;
-  font-weight: 700;
   margin-top: 3rem;
 }
 

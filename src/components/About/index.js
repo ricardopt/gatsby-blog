@@ -14,14 +14,12 @@ const About = props => {
 				<AboutHeading id="about"> About Me </AboutHeading>
 				<AboutContent>
 					<AboutHeadshot>
-						<img src={headshot} alt={`Mario Hernandez`} />
-						<SocialIcons />
+						<img src={headshot} alt={`Mario Hernandez`} /> <SocialIcons />
 					</AboutHeadshot>
 					<AboutBio>
-						<AboutName> Mario Hernandez </AboutName>
-						<AboutTitle> Front - End Developer </AboutTitle>
+						<AboutName> Mario Hernandez </AboutName> <AboutTitle> Front - End Developer </AboutTitle>
 						<p>
-							I help large and small organizations build and deploy their web systems. As a Front-End
+							I help large and small organizations build and deploy their web systems.As a Front - End
 							Developer at
 							<Link to="https://mediacurrent.com" target="_blank">
 								Mediacurrent,
@@ -29,9 +27,8 @@ const About = props => {
 							I work with clients including NFL, WWE, VisitTheUSA, Olympus, Higher Ed, Government, and
 							more.
 						</p>
-
 						<p>
-							I am frequent writer and speaker at web and open source conferences; co-host of the
+							I am frequent writer and speaker at web and open source conferences; co - host of the
 							Mediacurrent podcast; contributor of the
 							<Link to="https://www.drupal.org/project/simplify_menu" target="_blank">
 								simplify menu
@@ -40,8 +37,8 @@ const About = props => {
 							<Link to="https://www.drupal.org/node/2847582" target="_blank">
 								Out Of The Box
 							</Link>
-							initiative. I conduct private and community organized training workshops on all things
-							Drupal, Component Development and other front-end topics.
+							initiative.I conduct private and community organized training workshops on all things
+							Drupal, Component Development and other front - end topics.
 						</p>
 					</AboutBio>
 				</AboutContent>
@@ -99,9 +96,6 @@ const AboutContent = Styled.div`
 const AboutHeading = Styled.h3`
   width: 100%;
   font-size: 4rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 2.5px;
   padding-top: 80px;
   border-top: 1px solid ${colors.midGray};
   text-align: center;
@@ -115,11 +109,9 @@ const AboutHeading = Styled.h3`
 
 const AboutName = Styled.h3`
   margin-bottom: 10px;
-  font-size: 1.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  font-size: 3rem;
   text-align: center;
+  font-weight: 500;
 
   @media screen and (min-width: 540px) {
     text-align: left;

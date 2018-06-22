@@ -8,11 +8,10 @@ const Hero = props => {
 	return (
 		<React.Fragment>
 			<HeroComponent>
-				<HeroHeading>I build websites</HeroHeading>
-				<HeroSubheading>and speak at tech conferences</HeroSubheading>
-				<SocialIcons />
+				<HeroHeading> I Build Websites </HeroHeading>
+				<HeroSubheading> and speak at tech conferences </HeroSubheading> <SocialIcons />
 				<AboutButton>
-					<AnchorLink href="#about">More about me</AnchorLink>
+					<AnchorLink href="#about"> More about me </AnchorLink>
 				</AboutButton>
 			</HeroComponent>
 		</React.Fragment>
@@ -34,12 +33,11 @@ const HeroComponent = Styled.section`
 `;
 
 const HeroHeading = Styled.h1`
-  font-size: 5rem;
+  font-size: 6rem;
   text-align: center;
-  text-transform: uppercase;
 
   @media screen and (min-width: 768px) {
-    font-size: 7rem;
+    font-size: 10rem;
   }
 `;
 

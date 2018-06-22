@@ -130,14 +130,10 @@ const StyledLink = Styled.a`
 `;
 
 const FeaturedTitle = Styled.h3`
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 1.4;
-  text-transform: uppercase;
+  font-size: 2.5rem;
 
   @media screen and (min-width: 768px) {
-    font-size: 2.4rem;
-    font-weight: 500;
+    font-size: 3.5rem;
   }
 
   a {
