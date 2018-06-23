@@ -45,6 +45,7 @@ const HeroSubheading = Styled.h2`
   text-align: center;
   font-size: 2.5rem;
   font-weight: 400;
+  margin-top: 0;
 
   @media screen and (min-width: 768px) {
     font-size: 3.5rem;
