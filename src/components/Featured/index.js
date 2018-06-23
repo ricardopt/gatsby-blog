@@ -15,19 +15,23 @@ const Featured = ({ featuredPosts }) => {
 						<FeaturedImage>
 							<Img sizes={node.frontmatter.featuredImage.childImageSharp.sizes} />
 						</FeaturedImage>
-
 						<FeaturedText>
-							<Eyebrow>Featured Post</Eyebrow>
+							<Eyebrow> Featured Post </Eyebrow>
 							<FeaturedDate
 								className="blog-post__date"
-								dangerouslySetInnerHTML={{ __html: node.frontmatter.date }}
+								dangerouslySetInnerHTML={{
+									__html: node.frontmatter.date
+								}}
 							/>
 							<FeaturedTitle>
-								<Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
+								<Link to={node.frontmatter.path}> {node.frontmatter.title} </Link>
 							</FeaturedTitle>
-
-							<FeaturedExcerpt dangerouslySetInnerHTML={{ __html: node.frontmatter.excerpt }} />
-							<StyledLink href={node.frontmatter.path}>Read the full post</StyledLink>
+							<FeaturedExcerpt
+								dangerouslySetInnerHTML={{
+									__html: node.frontmatter.excerpt
+								}}
+							/>
+							<StyledLink href={node.frontmatter.path}> Read the full post </StyledLink>
 						</FeaturedText>
 					</FeaturedPost>
 				</FeaturedInner>
@@ -160,8 +164,6 @@ const FeaturedDate = Styled.div`
   }
 `;
 
-const FeaturedExcerpt = Styled.p`
-  font-size: 1.6rem;
-`;
+const FeaturedExcerpt = Styled.p``;
 
 export default Featured;

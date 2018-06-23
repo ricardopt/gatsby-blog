@@ -111,7 +111,7 @@ const AboutName = Styled.h3`
   margin-bottom: 10px;
   font-size: 3rem;
   text-align: center;
-  font-weight: 500;
+  font-weight: 700;
 
   @media screen and (min-width: 540px) {
     text-align: left;
@@ -121,7 +121,7 @@ const AboutName = Styled.h3`
 const AboutTitle = Styled.span`
   text-transform: uppercase;
   display: block;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   letter-spacing: 0.06em;
   font-weight: 400;
   margin-bottom: 20px;
@@ -133,12 +133,6 @@ const AboutTitle = Styled.span`
 `;
 
 const AboutBio = Styled.div`
-
-  @media screen and (min-width: 640px) {
-    p {
-      font-size: 1.5rem;
-    }
-  }
 
   a {
     display: inline-block;
