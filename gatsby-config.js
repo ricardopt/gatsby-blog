@@ -42,13 +42,6 @@ module.exports = {
 			}
 		},
 		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				path: `${__dirname}/src/events`,
-				name: `events`
-			}
-		},
-		{
 			resolve: `gatsby-transformer-remark`,
 			options: {
 				plugins: [
