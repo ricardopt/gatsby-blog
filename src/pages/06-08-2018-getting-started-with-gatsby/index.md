@@ -4,7 +4,7 @@ date: "2018-06-08T17:12:33.962Z"
 title: "Getting started with Gatsby"
 tags: ['gatsby', 'react']
 draft: false
-featured: true
+featured: false
 featuredImage: "./gatsby-intro.jpg"
 excerpt: "Your next website could very well be a static website with the power of React and the latest technologies.  Read on..."
 ---
