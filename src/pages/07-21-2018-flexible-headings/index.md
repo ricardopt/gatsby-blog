@@ -15,6 +15,8 @@ excerpt: "Headings are normally used for page or section titles and are a big pa
 
 Building websites using the component based approach presents all kinds of advantages over the traditional page building approach. Today I’m going to show how to create what would normally be an Atom if we use the atomic design approach for building components. We are going to take this simple component to a whole new level by providing a way to dynamically controlling how it is rendered.
 
+
+
 ## The heading component
 Headings are normally used for page or section titles and are a big part of making your website SEO friendly.  As simple as this may sound, headings need to be carefully planned.  A typical heading would look like this:
 
@@ -23,6 +25,8 @@ Headings are normally used for page or section titles and are a big part of maki
 ```
 
 The idea of components is that they are reusable, but how can we possibly turn what already looks like a bare bones component into one that provides options for choosing the heading level at rendering time?  If we were to reuse the heading component as it is we would always end up with an H1 heading.  There will be times when we may want an H2, H3, etc.
+
+
 
 ### Enter Twig and JSON
 Twig offers many advantages over plain HTML and today we will use some logic to transform the static heading component into a more dynamic one.
@@ -78,8 +82,10 @@ Next we pass the value of the title key so the text for the heading can be rende
 Finally we close the heading tab by again appending the heading_level variable.
 
 
+
 #### Now what?
 Well, our heading component is ready but unfortunately the component on its own does not do any good.  The best way to take advantage of our super smart component is to start using it within other components.
+
 
 
 ## Putting the heading component to use
@@ -103,6 +109,7 @@ NOTE:  For this to work, the same keys need to exist in the media-card’s JSON 
 From the code above we can see that we are asking for the heading to be a H3 and we are passing the css class of `media-card__heading` so we can pass specific styles when the heading is used in the media-card component.
 
 You noticed the part `@components`? this is only an example of a namespace.  If you are not familiar with the **components library** drupal module, it allows for creating namespace for your theme which you can use on your theme and modules. Read more about the [component libraries module](https://www.drupal.org/project/components).
+
 
 
 ## In closing
