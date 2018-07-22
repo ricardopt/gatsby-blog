@@ -116,6 +116,18 @@ From the code above we can see that we are asking for the heading to be a H3 and
 You noticed the part `@components`? this is only an example of a namespace.  If you are not familiar with the **components library** drupal module, it allows for creating namespace for your theme which you can use on your theme and modules. Read more about the [component libraries module](https://www.drupal.org/project/components).
 
 
+### End result
+
+The heading component we built above would look like this when it is rendered:
+
+```html
+<h3 class="heading media-card__heading">
+  This is an awesome heading component
+</h3>
+```
+It may seem like a waste of time to go thorugh all that trouble just to render a heading however, this provides all sorts of advantages when structuring your project's markup.
+
+
 
 ## In closing
 
