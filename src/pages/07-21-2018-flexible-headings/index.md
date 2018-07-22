@@ -1,6 +1,6 @@
 ---
 path: "/blog/flexible-headings-with-twig"
-date: "2018-06-28T17:12:33.962Z"
+date: "2018-07-21T17:12:33.962Z"
 title: "Flexible Headings with Twig"
 tags: ['components', 'twig']
 draft: false
