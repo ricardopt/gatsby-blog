@@ -33,9 +33,9 @@ Twig offers many advantages over plain HTML and today we will use some logic to 
 
 Let’s start by creating a simple JSON object which we will use as data for Twig to consume.  We will build some logic around this data to make the heading component more dynamic.  This is typically how I build components on projects I work on.
 
-* In your project, typically within the components/patterns directory create a new folder called **heading**
-* Inside the heading folder create a new file called **heading.json**
-* Inside the new file paste the code snippet below
+1. In your project, typically within the components/patterns directory create a new folder called **heading**
+2. Inside the heading folder create a new file called **heading.json**
+3. Inside the new file paste the code snippet below
 
 ```json
 {
@@ -47,8 +47,8 @@ Let’s start by creating a simple JSON object which we will use as data for Twi
 
 So we created a simple JSON object with 3 keys: title, heading_level and classes.  We will use these variables to transform the heading element and add logic.
 
-* Inside the heading folder create a new file called **heading.twig**
-* Inside the new file paste the code snippet below
+4. Inside the heading folder create a new file called **heading.twig**
+5. Inside the new file paste the code snippet below
 
 ```twig
 {% set heading_level = heading_level | default(2) %}
@@ -56,6 +56,7 @@ So we created a simple JSON object with 3 keys: title, heading_level and classes
     {{ title }}
 </h{{ heading_level }}>
 ```
+---
 
 So let’s go over what’s happening here.  We will break things down to better understand:
 
@@ -65,10 +66,13 @@ So let’s go over what’s happening here.  We will break things down to better
 We created a new variable for the heading level so we can pass it to the heading component to decide what heading we want to render (h1-h6).  If no value is passed the heading level will be 2 (H2), by default.
 
 
+
 ```twig
 <h{{ heading_level }} class="{{ classes|default('') }}">
 ```
-Next, we make use of the heading_level variable we just created by passing it to compose the heading tag (i.e. **h3**).  In addition, we are using the classes key so we can pass a unique css class to the heading when it’s time to include it in our templates.  More on this later.
+Next we make use of the heading_level variable we just created by passing it to compose the heading tag (i.e. **h2**).  In addition, we are using the classes key so we can pass a unique css class to the heading when it’s time to include it in our templates.  More on this later.
+
+
 
 ```twig
 {{ title }}
@@ -76,10 +80,11 @@ Next, we make use of the heading_level variable we just created by passing it to
 Next we pass the value of the title key so the text for the heading can be rendered. This may seem like an overkill because we could simply type the title of the heading directly in the twig template, however, this is a better approach for separation of concern between data and markup.
 
 
+
 ```twig
 </h{{ heading_level }}>
 ```
-Finally we close the heading tab by again appending the heading_level variable.
+Finally we close the heading tag by appending the heading_level variable.
 
 
 
@@ -115,6 +120,7 @@ You noticed the part `@components`? this is only an example of a namespace.  If 
 ## In closing
 
 There is a lot more you can do with this approach but in the interest of time and length of this post I’ve focused on the most basic functionality.  The main goal of this post is to bring light on how important it is to build components that are not restricted and can be used throughout the site in a way that does not feel like you are repeating yourself.
+
 
 
 #### Additional Resources:
