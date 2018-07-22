@@ -9,6 +9,10 @@ featuredImage: "./flexible-headings-hero.jpg"
 excerpt: "Headings are normally used for page or section titles and are a big part of making your website SEO friendly.  As simple as this may sound, headings need to be carefully planned."
 ---
 
+<blockquote>
+  Proper use of headings h1-h6 in your project present many advantages incuding semantic markup, better SEO ranking and more accessible content.
+</blockquote>
+
 Building websites using the component based approach presents all kinds of advantages over the traditional page building approach. Today I’m going to show how to create what would normally be an Atom if we use the atomic design approach for building components. We are going to take this simple component to a whole new level by providing a way to dynamically controlling how it is rendered.
 
 ## The heading component
@@ -60,7 +64,7 @@ We created a new variable for the heading level so we can pass it to the heading
 ```twig
 <h{{ heading_level }} class="{{ classes|default('') }}">
 ```
-Next, we make use of the heading_level variable we just created by passing it to compose the heading tag (i.e. <h3>).  In addition, we are using the classes key so we can pass a unique css class to the heading when it’s time to include it in our templates.  More on this later.
+Next, we make use of the heading_level variable we just created by passing it to compose the heading tag (i.e. **h3**).  In addition, we are using the classes key so we can pass a unique css class to the heading when it’s time to include it in our templates.  More on this later.
 
 ```twig
 {{ title }}
