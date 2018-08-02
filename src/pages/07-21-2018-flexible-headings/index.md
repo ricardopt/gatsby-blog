@@ -4,9 +4,9 @@ date: "2018-07-21T17:12:33.962Z"
 title: "Flexible Headings with Twig"
 tags: ['components', 'twig']
 draft: false
-featured: true
+featured: false
 featuredImage: "./flexible-headings-hero.jpg"
-excerpt: "Headings are normally used for page or section titles and are a big part of making your website SEO friendly.  As simple as this may sound, headings need to be carefully planned."
+excerpt: "Headings are normally used for page or section titles and are a big part of making your website SEO friendly and more accessible. For these reasons, headings need to be carefully planned."
 ---
 
 <blockquote>
