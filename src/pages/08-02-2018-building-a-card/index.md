@@ -4,7 +4,7 @@ date: "2018-08-02T17:12:33.962Z"
 title: "How to build a card component"
 tags: ['components']
 draft: false
-featured: true
+featured: false
 featuredImage: "./featured-image.jpg"
 excerpt: "Building components is a lot of fun but it takes good planning and attention to detail to build components which are flexible and reusable."
 ---
