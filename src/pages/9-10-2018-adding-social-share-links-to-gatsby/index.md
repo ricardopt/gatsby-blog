@@ -4,7 +4,7 @@ date: "2018-09-10T17:12:33.962Z"
 title: "Adding Social Share Links to Gatsby"
 tags: ['gatsby', 'social share']
 draft: false
-featured: true
+featured: false
 featuredImage: "./beach.jpg"
 excerpt: "Don't know about you but one of the first things I look for after reading a great article online is how to share it with others."
 ---
