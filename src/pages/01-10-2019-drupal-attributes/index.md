@@ -1,7 +1,7 @@
 ---
 path: "/blog/drupal-attributes"
 date: "2019-01-10T17:12:33.962Z"
-title: "Handleing Drupal attributes in components"
+title: "Handling Drupal attributes in components"
 tags: ['twig', 'drupal',]
 draft: false
 featured: true
