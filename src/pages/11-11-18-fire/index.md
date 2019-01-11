@@ -4,7 +4,7 @@ date: "2018-11-11T17:12:33.962Z"
 title: "Surviving the fire"
 tags: ['family', 'nature', 'support']
 draft: false
-featured: true
+featured: false
 featuredImage: "./fire.jpg"
 excerpt: "Waking up to knocks on the door by the Fire Department and the smell of smoke is still a surreal experience."
 ---
