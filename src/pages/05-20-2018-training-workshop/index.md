@@ -8,6 +8,10 @@ featured: false
 featuredImage: "./training-workshop.jpg"
 excerpt: "For the past couple of years I have been running private and community driven training workshops and I'd like to share my experiences and lessons learned."
 ---
+**Update 1-10-19**
+I wrote an extended version of this post at [Mediacurrent's blog](https://www.mediacurrent.com/blog/planning-effective-training/), check it out.
+
+***
 
 As long as I can remember I've enjoyed public speaking.  This doesn't mean I am good at it, it simply means I enjoy it.  School events, class president, my jobs, etc., they all taught me great lessons about public speaking.  So when I started as a developer, sharing my knowledge with others at conferences or meetups came pretty natural.
 
@@ -60,4 +64,3 @@ If possible, get help from someone who is also well-versed with the topic so the
 ## Finally
 
 Enjoy yourself.  Make sure you and your audience have fun.  If you show excitement in what you are doing people will get excited as well.
-
