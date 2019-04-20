@@ -60,7 +60,7 @@ const AboutHeadshot = Styled.div`
   img {
     display: block;
     margin: 0 auto 20px;
-    max-width: 200px;
+    max-width: 300px;
 
     @media screen and (min-width: 540px) {
       margin-right: 30px;

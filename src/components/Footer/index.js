@@ -9,7 +9,7 @@ const Footer = props => {
 			<FooterComponent>
 				<FooterInner>
 					<FooterBrand>
-						&copy; 2018 - <span>Mario Hernandez</span>
+						&copy; 2019 - <span>Mario Hernandez</span>
 					</FooterBrand>
 					<SocialIcons />
 				</FooterInner>
@@ -28,7 +28,7 @@ const FooterComponent = Styled.section`
 const FooterInner = Styled.div`
   max-width: 960px;
   margin: 0 auto;
-  
+
   a {
     color: ${colors.white};
   }
