@@ -4,7 +4,7 @@ date: "2019-01-10T17:12:33.962Z"
 title: "Handling Drupal attributes in components"
 tags: ['twig', 'drupal',]
 draft: false
-featured: true
+featured: false
 featuredImage: "./attributes.jpg"
 excerpt: "As a Front-End developer, working with Twig and Drupal is a pretty liberating thing which presents all kinds of posibilies, but it can also open the doors to breaking things Drupal counts on."
 ---
