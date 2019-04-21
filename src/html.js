@@ -58,7 +58,7 @@ module.exports = class HTML extends React.Component {
           />
           <link
             rel="manifest"
-            href="/site.webmanifest"
+            href="/site.webmanifest.json"
           />
           <link
             rel="mask-icon"
