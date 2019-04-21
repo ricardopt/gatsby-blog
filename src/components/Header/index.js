@@ -2,7 +2,6 @@ import React from 'react';
 import Navigation from '../Nav';
 import SiteLogo from '../Logo';
 import Styled from 'styled-components';
-import { colors } from '../../colors';
 
 const Header = () => (
 	<SiteHeader>
