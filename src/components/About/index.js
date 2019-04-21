@@ -19,26 +19,11 @@ const About = props => {
 					<AboutBio>
 						<AboutName> Mario Hernandez </AboutName> <AboutTitle> Front - End Developer </AboutTitle>
 						<p>
-							I help large and small organizations build and deploy their web systems.As a Front - End
-							Developer at
-							<Link to="https://mediacurrent.com" target="_blank">
-								Mediacurrent,
-							</Link>
-							I work with clients including NFL, WWE, VisitTheUSA, Olympus, Higher Ed, Government, and
-							more.
+							I am a Sr. Front-End Developer living in Los Angeles.  I help large and small organizations build and deploy web systems. I work with <a href="https://mediacurrent.com" target="_blank">Mediacurrent</a> where we work with some of the world's most popular brands.
 						</p>
-						<p>
-							I am frequent writer and speaker at web and open source conferences; co - host of the
-							Mediacurrent podcast; contributor of the
-							<Link to="https://www.drupal.org/project/simplify_menu" target="_blank">
-								simplify menu
-							</Link>
-							module and the
-							<Link to="https://www.drupal.org/node/2847582" target="_blank">
-								Out Of The Box
-							</Link>
-							initiative.I conduct private and community organized training workshops on all things
-							Drupal, Component Development and other front - end topics.
+            <p>
+							I am frequent writer and speaker at web and open source conferences; co-host of the
+							Mediacurrent podcast; contributor to the <a href="https://www.drupal.org/project/simplify_menu" target="_blank">Simplify Menu</a> module and the <a href="https://www.drupal.org/node/2847582" target="_blank">Out Of The Box</a> initiative. I conduct private and community organized training workshops.
 						</p>
 					</AboutBio>
 				</AboutContent>
