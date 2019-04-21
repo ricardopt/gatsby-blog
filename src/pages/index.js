@@ -3,7 +3,6 @@ import Hero from '../components/Hero';
 import Featured from '../components/Featured';
 import Footer from '../components/Footer';
 import About from '../components/About';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 const Home = ({ data }) => (
 	<React.Fragment>
