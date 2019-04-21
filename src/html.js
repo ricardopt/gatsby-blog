@@ -48,13 +48,13 @@ module.exports = class HTML extends React.Component {
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="../favicon-32x32.png"
+            href="/favicon-32x32.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="../favicon-16x16.png"
+            href="/favicon-16x16.png"
           />
           <link
             rel="manifest"
