@@ -19,11 +19,11 @@ const About = props => {
 					<AboutBio>
 						<AboutName> Mario Hernandez </AboutName> <AboutTitle>Head of Learning at Mediacurrent </AboutTitle>
 						<p>
-							I am a Front-End Developer and Head of Learning living in Los Angeles.  I help large and small organizations build and deploy web systems. I work with [Mediacurrent](https://mediacurrent.com) where we work with some of the world's most popular brands.
+							I am a Front-End Developer and Head of Learning living in Los Angeles.  I help large and small organizations build and deploy web systems. I work with <a href='https://mediacurrent.com'>Mediacurrent</a> where we work with some of the world's most popular brands.
 						</p>
             <p>
 							I am frequent writer and speaker at web and open source conferences; co-host of the
-							Mediacurrent podcast; co-maintainer of the [Simplify Menu](https://www.drupal.org/project/simplify_menu) module and was part of the team behind [Out Of The Box](https://www.drupal.org/node/2847582) initiative. I provide Front-End training for clients and also conduct private and community organized training workshops.
+							Mediacurrent podcast; co-maintainer of the <a href='https://www.drupal.org/project/simplify_menu/'>Simplify Menu</a> module and was part of the team behind <a href='https://www.drupal.org/node/2847582/'>Out Of The Box</a> initiative. I provide Front-End training for clients and also conduct private and community organized training workshops.
 						</p>
 					</AboutBio>
 				</AboutContent>
