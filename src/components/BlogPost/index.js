@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Button from '../Button';
+// import Button from '../Button';
 import Img from 'gatsby-image';
 import Styled from 'styled-components';
 import Eyebrow from '../Eyebrow';
