@@ -4,7 +4,7 @@ date: "2019-04-20"
 title: "Our best training yet"
 tags: ['training', 'drupalcon',]
 draft: false
-featured: true
+featured: false
 featuredImage: "./students.jpg"
 excerpt: "DrupalCon Seattle 2019 proved to be our best experience yet at conducting a training workshop and would like to share the good and bad with you."
 ---

@@ -1,8 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
-// import Helmet from './Headermet';
-// import Header from '../Header';
+import Header from './Header';
 import '../sass/base.scss';
 import '../sass/base.scss';
 import '../sass/typography.scss';
@@ -28,6 +27,7 @@ export default ({ children }) => (
           titleTemplate={`%s | ${data.site.siteMetadata.title}`}
           defaultTitle={data.site.siteMetadata.title}
         />
+        <Header />
         <section className="main-content">{children}</section>
       </>
     )}

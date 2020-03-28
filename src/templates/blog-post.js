@@ -1,11 +1,11 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import { StaticQuery, graphql } from 'gatsby';
+import Tags from '../components/Tags';
+import Footer from '../components/Footer';
 import Helmet from 'react-helmet';
 import Img from 'gatsby-image';
-import Tags from '../components/Tags';
 import Styled from 'styled-components';
-import Footer from '../components/Footer';
 import { colors } from '../colors';
 
 export default function Template({ data }) {

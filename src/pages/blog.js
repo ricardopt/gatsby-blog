@@ -4,11 +4,7 @@ import Img from 'gatsby-image';
 import Styled from 'styled-components';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
-
 import Footer from '../components/Footer';
-import Tags from '../components/Tags';
-import Button from '../components/Button';
-import Eyebrow from '../components/Eyebrow';
 import { colors } from '../colors';
 
 const IndexBlog = ({ data }) => (
@@ -39,9 +35,9 @@ const IndexBlog = ({ data }) => (
                   dangerouslySetInnerHTML={{ __html: node.frontmatter.excerpt }}
                 />
 
-                <BlogPostButton href={node.frontmatter.path}>
+                <Link className="blog-post__cta" to={node.frontmatter.path}>
                   Read the full post
-                </BlogPostButton>
+                </Link>
               </BlogPostContent>
             </BlogPostItem>
           </BlogSection>
@@ -150,6 +146,28 @@ const BlogPostContent = Styled.div`
       left: inherit;
     }
   }
+
+  .blog-post__cta {
+    display: inline-block;
+    padding: .8rem 1.4rem;
+    border: 2px solid ${colors.black};
+    color: ${colors.black};
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+    margin: 1rem auto 0;
+    letter-spacing: 0.2em;
+    transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+
+    &:hover {
+      border-color: ${colors.black};
+      background: ${colors.black};
+      color: ${colors.white};
+    }
+  }
 `;
 
 const BlogPostDate = Styled.div`
@@ -185,28 +203,6 @@ const BlogPostTitle = Styled.h2`
 
 const BlogPostExcerpt = Styled.p`
   font-size: 1.6rem;
-`;
-
-const BlogPostButton = Styled.a`
-  display: inline-block;
-  padding: .8rem 1.4rem;
-  border: 2px solid ${colors.black};
-  color: ${colors.black};
-  text-decoration: none;
-  text-transform: uppercase;
-  white-space: nowrap;
-  font-size: 1.3rem;
-  font-weight: 500;
-  text-align: center;
-  margin: 1rem auto 0;
-  letter-spacing: 0.2em;
-  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
-
-  &:hover {
-    border-color: ${colors.black};
-    background: ${colors.black};
-    color: ${colors.white};
-  }
 `;
 
 export const query = graphql`

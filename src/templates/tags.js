@@ -35,7 +35,6 @@ export default function Tags({ pageContext }) {
       <AllTagsHeading>Tags</AllTagsHeading>
       <AllTagsList>
         {Object.keys(posts).map((tagName) => {
-          const tags = posts[tagName];
           return (
             <AllTagsListItem key={tagName}>
               <TagItem to={`/tags/${tagName}`}>{tagName}</TagItem>

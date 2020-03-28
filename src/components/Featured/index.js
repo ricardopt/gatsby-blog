@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Button from '../Button';
 import Img from 'gatsby-image';
 import Styled from 'styled-components';
 import Eyebrow from '../Eyebrow';
@@ -26,20 +25,16 @@ const Featured = ({ featuredPosts }) => {
                 }}
               />
               <FeaturedTitle>
-                <Link to={node.frontmatter.path}>
-                  {' '}
-                  {node.frontmatter.title}{' '}
-                </Link>
+                <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
               </FeaturedTitle>
               <FeaturedExcerpt
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.excerpt
                 }}
               />
-              <StyledLink href={node.frontmatter.path}>
-                {' '}
-                Read the full post{' '}
-              </StyledLink>
+              <Link className="featured__cta" to={node.frontmatter.path}>
+                Read the full post
+              </Link>
             </FeaturedText>
           </FeaturedPost>
         </FeaturedInner>
@@ -117,27 +112,27 @@ const FeaturedText = Styled.div`
       left: inherit;
     }
   }
-`;
 
-const StyledLink = Styled.a`
-  display: inline-block;
-  padding: .8rem 1.4rem;
-  border: 2px solid ${colors.black};
-  color: ${colors.black};
-  text-decoration: none;
-  text-transform: uppercase;
-  white-space: nowrap;
-  font-size: 1.2rem;
-  font-weight: 500;
-  text-align: center;
-  margin: 1rem auto 0;
-  letter-spacing: 0.2em;
-  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+  .featured__cta {
+    display: inline-block;
+    padding: .8rem 1.4rem;
+    border: 2px solid ${colors.black};
+    color: ${colors.black};
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    margin: 1rem auto 0;
+    letter-spacing: 0.2em;
+    transition: background-color 0.25s, color 0.25s, border-color 0.25s;
 
-  &:hover {
-    border-color: ${colors.black};
-    background: ${colors.black};
-    color: ${colors.white};
+    &:hover {
+      border-color: ${colors.black};
+      background: ${colors.black};
+      color: ${colors.white};
+    }
   }
 `;
 
