@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import Button from '../Button';
 import Img from 'gatsby-image';
 import Styled from 'styled-components';
@@ -7,32 +7,40 @@ import Eyebrow from '../Eyebrow';
 import { colors } from '../../colors';
 
 const BlogPostItem = ({ blogPost }) => {
-	return (
-		<BlogPostWrapper>
-			{blogPost.map(({ node }) => (
-				<BlogPostInner key={node.id}>
-					<BlogPost>
-						<BlogFeaturedImage>
-							<Img sizes={node.frontmatter.featuredImage.childImageSharp.sizes} />
-						</BlogFeaturedImage>
+  return (
+    <BlogPostWrapper>
+      {blogPost.map(({ node }) => (
+        <BlogPostInner key={node.id}>
+          <BlogPost>
+            <BlogFeaturedImage>
+              <Img
+                sizes={node.frontmatter.featuredImage.childImageSharp.sizes}
+              />
+            </BlogFeaturedImage>
 
-						<BlogPostContent>
-							<Eyebrow>Featured Post</Eyebrow>
-							<BlogPostDate dangerouslySetInnerHTML={{ __html: node.frontmatter.date }} />
+            <BlogPostContent>
+              <Eyebrow>Featured Post</Eyebrow>
+              <BlogPostDate
+                dangerouslySetInnerHTML={{ __html: node.frontmatter.date }}
+              />
 
-							<BlogPostTitle>
-								<Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
-							</BlogPostTitle>
+              <BlogPostTitle>
+                <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
+              </BlogPostTitle>
 
-							<BlogPostExcerpt dangerouslySetInnerHTML={{ __html: node.frontmatter.excerpt }} />
+              <BlogPostExcerpt
+                dangerouslySetInnerHTML={{ __html: node.frontmatter.excerpt }}
+              />
 
-							<StyledLink href={node.frontmatter.path}>Read full article</StyledLink>
-						</BlogPostContent>
-					</BlogPost>
-				</BlogPostInner>
-			))}
-		</BlogPostWrapper>
-	);
+              <StyledLink href={node.frontmatter.path}>
+                Read full article
+              </StyledLink>
+            </BlogPostContent>
+          </BlogPost>
+        </BlogPostInner>
+      ))}
+    </BlogPostWrapper>
+  );
 };
 
 const BlogPostWrapper = Styled.section`

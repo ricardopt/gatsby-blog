@@ -1,6 +1,6 @@
 ---
 path: "/blog/our-best-training-yet"
-date: "2019-04-20T17:12:33.962Z"
+date: "2019-04-20"
 title: "Our best training yet"
 tags: ['training', 'drupalcon',]
 draft: false

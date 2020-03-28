@@ -1,6 +1,6 @@
 ---
 path: "/blog/getting-started-with-gatsby"
-date: "2018-06-08T17:12:33.962Z"
+date: "2018-06-08"
 title: "Getting started with Gatsby"
 tags: ['gatsby', 'react']
 draft: false

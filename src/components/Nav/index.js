@@ -1,25 +1,25 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import Styled from 'styled-components';
 import { colors } from '../../colors';
 
-const Nav = props => {
-	return (
-		<MainNav>
-			<NavList>
-				<NavItem>
-					<Link exact to={'/'} activeClassName="active">
-						Home
-					</Link>
-				</NavItem>
-				<NavItem>
-					<Link strict to={'/blog/'} activeClassName="active">
-						Blog
-					</Link>
-				</NavItem>
-			</NavList>
-		</MainNav>
-	);
+const Nav = (props) => {
+  return (
+    <MainNav>
+      <NavList>
+        <NavItem>
+          <Link exact to={'/'} activeClassName="active">
+            Home
+          </Link>
+        </NavItem>
+        <NavItem>
+          <Link strict to={'/blog/'} activeClassName="active">
+            Blog
+          </Link>
+        </NavItem>
+      </NavList>
+    </MainNav>
+  );
 };
 
 const MainNav = Styled.nav`
@@ -43,7 +43,7 @@ const NavItem = Styled.li`
     font-size: 1.5rem;
     font-weight: normal;
     transition: color 0.3s ease-in-out;
-  
+
     &.active,
     &:hover {
       padding-bottom: 2px;

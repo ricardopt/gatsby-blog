@@ -1,12 +1,12 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import Styled from 'styled-components';
 import { colors } from '../../colors';
 
 const Logo = () => (
-	<SiteLogo href="/">
-		Mario<span>Hernandez</span>
-	</SiteLogo>
+  <SiteLogo href="/">
+    Mario<span>Hernandez</span>
+  </SiteLogo>
 );
 
 const SiteLogo = Styled.a`

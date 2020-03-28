@@ -1,50 +1,50 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import Layout from '../components/layout';
+import { Link } from 'gatsby';
 import Styled from 'styled-components';
 import { colors } from '../colors';
-import Eyebrow from '../components/Eyebrow';
 
-export default function Tags({ pathContext }) {
-	const { posts, post, tag } = pathContext;
-	if (tag) {
-		return (
-			<TagsPage>
-				<TagsHeading>
-					There {post.length === 1 ? 'is' : 'are'} <span>{post.length}</span> post{post.length === 1
-						? ''
-						: 's'}{' '}
-					tagged with <span>{tag}</span>
-				</TagsHeading>
-				<TagsList>
-					{post.map(({ id, frontmatter, fields }) => {
-						return (
-							<TagsListItem key={id}>
-								<TaggedItem>
-									<TagLink to={frontmatter.path}>{frontmatter.title}</TagLink>
-								</TaggedItem>
-							</TagsListItem>
-						);
-					})}
-				</TagsList>
-				<Link to="/tags">All tags</Link>
-			</TagsPage>
-		);
-	}
-	return (
-		<AllTagsWrapper>
-			<AllTagsHeading>Tags</AllTagsHeading>
-			<AllTagsList>
-				{Object.keys(posts).map(tagName => {
-					const tags = posts[tagName];
-					return (
-						<AllTagsListItem key={tagName}>
-							<TagItem to={`/tags/${tagName}`}>{tagName}</TagItem>
-						</AllTagsListItem>
-					);
-				})}
-			</AllTagsList>
-		</AllTagsWrapper>
-	);
+export default function Tags({ pageContext }) {
+  const { posts, post, tag } = pageContext;
+  if (tag) {
+    return (
+      <Layout>
+        <TagsPage>
+          <TagsHeading>
+            There {post.length === 1 ? 'is' : 'are'} <span>{post.length}</span>{' '}
+            post{post.length === 1 ? '' : 's'} tagged with <span>{tag}</span>
+          </TagsHeading>
+          <TagsList>
+            {post.map(({ id, frontmatter, fields }) => {
+              return (
+                <TagsListItem key={id}>
+                  <TaggedItem>
+                    <TagLink to={frontmatter.path}>{frontmatter.title}</TagLink>
+                  </TaggedItem>
+                </TagsListItem>
+              );
+            })}
+          </TagsList>
+          <Link to="/tags">All tags</Link>
+        </TagsPage>
+      </Layout>
+    );
+  }
+  return (
+    <AllTagsWrapper>
+      <AllTagsHeading>Tags</AllTagsHeading>
+      <AllTagsList>
+        {Object.keys(posts).map((tagName) => {
+          const tags = posts[tagName];
+          return (
+            <AllTagsListItem key={tagName}>
+              <TagItem to={`/tags/${tagName}`}>{tagName}</TagItem>
+            </AllTagsListItem>
+          );
+        })}
+      </AllTagsList>
+    </AllTagsWrapper>
+  );
 }
 
 const TagsPage = Styled.article`

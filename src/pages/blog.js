@@ -1,7 +1,9 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import Layout from '../components/layout';
 import Img from 'gatsby-image';
 import Styled from 'styled-components';
+import { graphql } from 'gatsby';
+import { Link } from 'gatsby';
 
 import Footer from '../components/Footer';
 import Tags from '../components/Tags';
@@ -10,32 +12,44 @@ import Eyebrow from '../components/Eyebrow';
 import { colors } from '../colors';
 
 const IndexBlog = ({ data }) => (
-	<React.Fragment>
-		<PageHeading>Blog</PageHeading>
-		<BlogWrapper>
-			{data.allMarkdownRemark.edges.map(({ node }) => (
-				<BlogSection key={node.id}>
-					<BlogPostItem>
-						<BlogPostImage>
-							<Img sizes={node.frontmatter.featuredImage.childImageSharp.sizes} />
-						</BlogPostImage>
+  <React.Fragment>
+    <Layout>
+      <PageHeading>Blog</PageHeading>
+      <BlogWrapper>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <BlogSection key={node.id}>
+            <BlogPostItem>
+              <BlogPostImage>
+                <Img
+                  sizes={node.frontmatter.featuredImage.childImageSharp.sizes}
+                />
+              </BlogPostImage>
 
-						<BlogPostContent>
-							<BlogPostDate dangerouslySetInnerHTML={{ __html: node.frontmatter.date }} />
-							<BlogPostTitle>
-								<Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
-							</BlogPostTitle>
+              <BlogPostContent>
+                <BlogPostDate
+                  dangerouslySetInnerHTML={{ __html: node.frontmatter.date }}
+                />
+                <BlogPostTitle>
+                  <Link to={node.frontmatter.path}>
+                    {node.frontmatter.title}
+                  </Link>
+                </BlogPostTitle>
 
-							<BlogPostExcerpt dangerouslySetInnerHTML={{ __html: node.frontmatter.excerpt }} />
+                <BlogPostExcerpt
+                  dangerouslySetInnerHTML={{ __html: node.frontmatter.excerpt }}
+                />
 
-							<BlogPostButton href={node.frontmatter.path}>Read the full post</BlogPostButton>
-						</BlogPostContent>
-					</BlogPostItem>
-				</BlogSection>
-			))}
-		</BlogWrapper>
-		<Footer />
-	</React.Fragment>
+                <BlogPostButton href={node.frontmatter.path}>
+                  Read the full post
+                </BlogPostButton>
+              </BlogPostContent>
+            </BlogPostItem>
+          </BlogSection>
+        ))}
+      </BlogWrapper>
+      <Footer />
+    </Layout>
+  </React.Fragment>
 );
 
 export default IndexBlog;
@@ -196,31 +210,31 @@ const BlogPostButton = Styled.a`
 `;
 
 export const query = graphql`
-	query IndexBlogQuery {
-		allMarkdownRemark(
-			sort: { fields: [frontmatter___date], order: DESC }
-			filter: { frontmatter: { draft: { eq: false } } }
-		) {
-			totalCount
-			edges {
-				node {
-					id
-					frontmatter {
-						title
-						tags
-						path
-						excerpt
-						date(formatString: "MMMM DD, YYYY")
-						featuredImage {
-							childImageSharp {
-								sizes(maxWidth: 1200) {
-									...GatsbyImageSharpSizes
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+  {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { draft: { eq: false } } }
+    ) {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            tags
+            path
+            excerpt
+            date(formatString: "MMMM DD, YYYY")
+            featuredImage {
+              childImageSharp {
+                sizes(maxWidth: 1200) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 `;

@@ -1,9 +1,11 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import Styled from 'styled-components';
 import { colors } from '../../colors';
 
-const Button = () => <PrimaryButton href={'/about'}>More about me</PrimaryButton>;
+const Button = () => (
+  <PrimaryButton href={'/about'}>More about me</PrimaryButton>
+);
 
 export default Button;
 

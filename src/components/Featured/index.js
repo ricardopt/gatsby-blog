@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import Button from '../Button';
 import Img from 'gatsby-image';
 import Styled from 'styled-components';
@@ -7,37 +7,45 @@ import Eyebrow from '../Eyebrow';
 import { colors } from '../../colors';
 
 const Featured = ({ featuredPosts }) => {
-	return (
-		<FeaturedWrapper>
-			{featuredPosts.map(({ node }) => (
-				<FeaturedInner key={node.id}>
-					<FeaturedPost>
-						<FeaturedImage>
-							<Img sizes={node.frontmatter.featuredImage.childImageSharp.sizes} />
-						</FeaturedImage>
-						<FeaturedText>
-							<Eyebrow> Featured Post </Eyebrow>
-							<FeaturedDate
-								className="blog-post__date"
-								dangerouslySetInnerHTML={{
-									__html: node.frontmatter.date
-								}}
-							/>
-							<FeaturedTitle>
-								<Link to={node.frontmatter.path}> {node.frontmatter.title} </Link>
-							</FeaturedTitle>
-							<FeaturedExcerpt
-								dangerouslySetInnerHTML={{
-									__html: node.frontmatter.excerpt
-								}}
-							/>
-							<StyledLink href={node.frontmatter.path}> Read the full post </StyledLink>
-						</FeaturedText>
-					</FeaturedPost>
-				</FeaturedInner>
-			))}
-		</FeaturedWrapper>
-	);
+  return (
+    <FeaturedWrapper>
+      {featuredPosts.map(({ node }) => (
+        <FeaturedInner key={node.id}>
+          <FeaturedPost>
+            <FeaturedImage>
+              <Img
+                sizes={node.frontmatter.featuredImage.childImageSharp.sizes}
+              />
+            </FeaturedImage>
+            <FeaturedText>
+              <Eyebrow> Featured Post </Eyebrow>
+              <FeaturedDate
+                className="blog-post__date"
+                dangerouslySetInnerHTML={{
+                  __html: node.frontmatter.date
+                }}
+              />
+              <FeaturedTitle>
+                <Link to={node.frontmatter.path}>
+                  {' '}
+                  {node.frontmatter.title}{' '}
+                </Link>
+              </FeaturedTitle>
+              <FeaturedExcerpt
+                dangerouslySetInnerHTML={{
+                  __html: node.frontmatter.excerpt
+                }}
+              />
+              <StyledLink href={node.frontmatter.path}>
+                {' '}
+                Read the full post{' '}
+              </StyledLink>
+            </FeaturedText>
+          </FeaturedPost>
+        </FeaturedInner>
+      ))}
+    </FeaturedWrapper>
+  );
 };
 
 const FeaturedWrapper = Styled.section`
