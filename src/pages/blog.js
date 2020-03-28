@@ -17,7 +17,7 @@ const IndexBlog = ({ data }) => (
             <BlogPostItem>
               <BlogPostImage>
                 <Img
-                  sizes={node.frontmatter.featuredImage.childImageSharp.sizes}
+                  fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
                 />
               </BlogPostImage>
 
@@ -223,8 +223,8 @@ export const query = graphql`
             date(formatString: "MMMM DD, YYYY")
             featuredImage {
               childImageSharp {
-                sizes(maxWidth: 1200) {
-                  ...GatsbyImageSharpSizes
+                fluid(maxWidth: 1200) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
