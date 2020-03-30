@@ -1,6 +1,6 @@
 ---
 path: "/blog/surviving-the-fire"
-date: "2018-11-11T17:12:33.962Z"
+date: "2018-11-11"
 title: "Surviving the fire"
 tags: ['family', 'nature', 'support']
 draft: false

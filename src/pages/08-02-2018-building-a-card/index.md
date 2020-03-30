@@ -1,6 +1,6 @@
 ---
 path: "/blog/how-to-build-a-card-component"
-date: "2018-08-02T17:12:33.962Z"
+date: "2018-08-02"
 title: "How to build a card component"
 tags: ['components']
 draft: false

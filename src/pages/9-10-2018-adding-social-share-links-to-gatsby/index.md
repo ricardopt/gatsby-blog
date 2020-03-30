@@ -1,6 +1,6 @@
 ---
 path: "/blog/adding-social-share-links-to-gatsby"
-date: "2018-09-10T17:12:33.962Z"
+date: "2018-09-10"
 title: "Adding Social Share Links to Gatsby"
 tags: ['gatsby', 'social share']
 draft: false

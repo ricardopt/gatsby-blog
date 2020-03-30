@@ -1,6 +1,6 @@
 ---
 path: "/blog/running-a-training-workshop"
-date: "2018-05-20T17:12:33.962Z"
+date: "2018-05-20"
 title: "Running a training workshop"
 tags: ['training']
 draft: false

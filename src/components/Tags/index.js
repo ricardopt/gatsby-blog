@@ -1,18 +1,19 @@
 import React from 'react';
-import Link from 'gatsby-link';
+// import { Link } from 'gatsby';
 import Styled from 'styled-components';
 import { colors } from '../../colors';
 
 export default function Tags({ list = [] }) {
-	return (
-		<TagsList>
-			{list.map(tag => (
-				<TagItem key={tag}>
-					<TagLink href={`/tags/${tag}`}>{tag}</TagLink>
-				</TagItem>
-			))}
-		</TagsList>
-	);
+  return (
+    <TagsList>
+      {list.map((tag) => (
+        <TagItem key={tag}>
+          {/* <Link to={'/tags/${tag}'}>{tag}</Link> */}
+          <TagLink href={`/tags/${tag}`}>{tag}</TagLink>
+        </TagItem>
+      ))}
+    </TagsList>
+  );
 }
 
 const TagsList = Styled.ul`

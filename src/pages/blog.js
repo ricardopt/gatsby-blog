@@ -1,41 +1,51 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import Layout from '../components/layout';
 import Img from 'gatsby-image';
 import Styled from 'styled-components';
-
+import { graphql } from 'gatsby';
+import { Link } from 'gatsby';
 import Footer from '../components/Footer';
-import Tags from '../components/Tags';
-import Button from '../components/Button';
-import Eyebrow from '../components/Eyebrow';
 import { colors } from '../colors';
 
 const IndexBlog = ({ data }) => (
-	<React.Fragment>
-		<PageHeading>Blog</PageHeading>
-		<BlogWrapper>
-			{data.allMarkdownRemark.edges.map(({ node }) => (
-				<BlogSection key={node.id}>
-					<BlogPostItem>
-						<BlogPostImage>
-							<Img sizes={node.frontmatter.featuredImage.childImageSharp.sizes} />
-						</BlogPostImage>
+  <React.Fragment>
+    <Layout>
+      <PageHeading>Blog</PageHeading>
+      <BlogWrapper>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <BlogSection key={node.id}>
+            <BlogPostItem>
+              <BlogPostImage>
+                <Img
+                  fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                />
+              </BlogPostImage>
 
-						<BlogPostContent>
-							<BlogPostDate dangerouslySetInnerHTML={{ __html: node.frontmatter.date }} />
-							<BlogPostTitle>
-								<Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
-							</BlogPostTitle>
+              <BlogPostContent>
+                <BlogPostDate
+                  dangerouslySetInnerHTML={{ __html: node.frontmatter.date }}
+                />
+                <BlogPostTitle>
+                  <Link to={node.frontmatter.path}>
+                    {node.frontmatter.title}
+                  </Link>
+                </BlogPostTitle>
 
-							<BlogPostExcerpt dangerouslySetInnerHTML={{ __html: node.frontmatter.excerpt }} />
+                <BlogPostExcerpt
+                  dangerouslySetInnerHTML={{ __html: node.frontmatter.excerpt }}
+                />
 
-							<BlogPostButton href={node.frontmatter.path}>Read the full post</BlogPostButton>
-						</BlogPostContent>
-					</BlogPostItem>
-				</BlogSection>
-			))}
-		</BlogWrapper>
-		<Footer />
-	</React.Fragment>
+                <Link className="blog-post__cta" to={node.frontmatter.path}>
+                  Read the full post
+                </Link>
+              </BlogPostContent>
+            </BlogPostItem>
+          </BlogSection>
+        ))}
+      </BlogWrapper>
+      <Footer />
+    </Layout>
+  </React.Fragment>
 );
 
 export default IndexBlog;
@@ -136,6 +146,28 @@ const BlogPostContent = Styled.div`
       left: inherit;
     }
   }
+
+  .blog-post__cta {
+    display: inline-block;
+    padding: .8rem 1.4rem;
+    border: 2px solid ${colors.black};
+    color: ${colors.black};
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+    margin: 1rem auto 0;
+    letter-spacing: 0.2em;
+    transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+
+    &:hover {
+      border-color: ${colors.black};
+      background: ${colors.black};
+      color: ${colors.white};
+    }
+  }
 `;
 
 const BlogPostDate = Styled.div`
@@ -173,54 +205,32 @@ const BlogPostExcerpt = Styled.p`
   font-size: 1.6rem;
 `;
 
-const BlogPostButton = Styled.a`
-  display: inline-block;
-  padding: .8rem 1.4rem;
-  border: 2px solid ${colors.black};
-  color: ${colors.black};
-  text-decoration: none;
-  text-transform: uppercase;
-  white-space: nowrap;
-  font-size: 1.3rem;
-  font-weight: 500;
-  text-align: center;
-  margin: 1rem auto 0;
-  letter-spacing: 0.2em;
-  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
-
-  &:hover {
-    border-color: ${colors.black};
-    background: ${colors.black};
-    color: ${colors.white};
-  }
-`;
-
 export const query = graphql`
-	query IndexBlogQuery {
-		allMarkdownRemark(
-			sort: { fields: [frontmatter___date], order: DESC }
-			filter: { frontmatter: { draft: { eq: false } } }
-		) {
-			totalCount
-			edges {
-				node {
-					id
-					frontmatter {
-						title
-						tags
-						path
-						excerpt
-						date(formatString: "MMMM DD, YYYY")
-						featuredImage {
-							childImageSharp {
-								sizes(maxWidth: 1200) {
-									...GatsbyImageSharpSizes
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+  {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { draft: { eq: false } } }
+    ) {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            tags
+            path
+            excerpt
+            date(formatString: "MMMM DD, YYYY")
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 1200) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 `;

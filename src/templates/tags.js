@@ -1,50 +1,56 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import Layout from '../components/layout';
+import Footer from '../components/Footer';
+import { Link } from 'gatsby';
 import Styled from 'styled-components';
 import { colors } from '../colors';
-import Eyebrow from '../components/Eyebrow';
 
-export default function Tags({ pathContext }) {
-	const { posts, post, tag } = pathContext;
-	if (tag) {
-		return (
-			<TagsPage>
-				<TagsHeading>
-					There {post.length === 1 ? 'is' : 'are'} <span>{post.length}</span> post{post.length === 1
-						? ''
-						: 's'}{' '}
-					tagged with <span>{tag}</span>
-				</TagsHeading>
-				<TagsList>
-					{post.map(({ id, frontmatter, fields }) => {
-						return (
-							<TagsListItem key={id}>
-								<TaggedItem>
-									<TagLink to={frontmatter.path}>{frontmatter.title}</TagLink>
-								</TaggedItem>
-							</TagsListItem>
-						);
-					})}
-				</TagsList>
-				<Link to="/tags">All tags</Link>
-			</TagsPage>
-		);
-	}
-	return (
-		<AllTagsWrapper>
-			<AllTagsHeading>Tags</AllTagsHeading>
-			<AllTagsList>
-				{Object.keys(posts).map(tagName => {
-					const tags = posts[tagName];
-					return (
-						<AllTagsListItem key={tagName}>
-							<TagItem to={`/tags/${tagName}`}>{tagName}</TagItem>
-						</AllTagsListItem>
-					);
-				})}
-			</AllTagsList>
-		</AllTagsWrapper>
-	);
+export default function Tags({ pageContext }) {
+  const { posts, post, tag } = pageContext;
+  if (tag) {
+    return (
+      <Layout>
+        <TagsPage>
+          <TagsHeading>
+            There {post.length === 1 ? 'is' : 'are'} <span>{post.length}</span>{' '}
+            post{post.length === 1 ? '' : 's'} tagged with <span>{tag}</span>
+          </TagsHeading>
+          <TagsList>
+            {post.map(({ id, frontmatter, fields }) => {
+              return (
+                <TagsListItem key={id}>
+                  <TaggedItem>
+                    <Link className="tag__link" to={frontmatter.path}>
+                      {frontmatter.title}
+                    </Link>
+                  </TaggedItem>
+                </TagsListItem>
+              );
+            })}
+          </TagsList>
+          <Link to="/tags">All tags</Link>
+        </TagsPage>
+        <Footer />
+      </Layout>
+    );
+  }
+  return (
+    <Layout>
+      <AllTagsWrapper>
+        <AllTagsHeading>Tags</AllTagsHeading>
+        <AllTagsList>
+          {Object.keys(posts).map((tagName) => {
+            return (
+              <AllTagsListItem key={tagName}>
+                <TagItem to={`/tags/${tagName}`}>{tagName}</TagItem>
+              </AllTagsListItem>
+            );
+          })}
+        </AllTagsList>
+      </AllTagsWrapper>
+      <Footer />
+    </Layout>
+  );
 }
 
 const TagsPage = Styled.article`
@@ -58,7 +64,7 @@ const TagsPage = Styled.article`
 
 const TagsHeading = Styled.h1`
   font-size: 2.4rem;
-  color: ${colors.midGray};
+  color: ${colors.darkGray};
 
   span {
     font-weight: bold;
@@ -76,7 +82,17 @@ const TagsListItem = Styled.li`
   padding: 4px 0;
 `;
 
-const TaggedItem = Styled.h2``;
+const TaggedItem = Styled.h2`
+
+  .tag__link {
+    text-transform: uppercase;
+    font-size: 2rem;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+`;
 
 const AllTagsWrapper = Styled.section`
   max-width: 960px;
@@ -101,15 +117,6 @@ const AllTagsListItem = Styled.li`
   display: inline-block;
   margin-right: 20px;
   margin-bottom: 20px;
-`;
-
-const TagLink = Styled(Link)`
-  text-transform: uppercase;
-  font-size: 2rem;
-
-  &:hover {
-    text-decoration: none;
-  }
 `;
 
 const TagItem = Styled(Link)`
