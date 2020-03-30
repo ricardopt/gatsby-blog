@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout';
+import Footer from '../components/Footer';
 import { Link } from 'gatsby';
 import Styled from 'styled-components';
 import { colors } from '../colors';
@@ -29,22 +30,26 @@ export default function Tags({ pageContext }) {
           </TagsList>
           <Link to="/tags">All tags</Link>
         </TagsPage>
+        <Footer />
       </Layout>
     );
   }
   return (
-    <AllTagsWrapper>
-      <AllTagsHeading>Tags</AllTagsHeading>
-      <AllTagsList>
-        {Object.keys(posts).map((tagName) => {
-          return (
-            <AllTagsListItem key={tagName}>
-              <TagItem to={`/tags/${tagName}`}>{tagName}</TagItem>
-            </AllTagsListItem>
-          );
-        })}
-      </AllTagsList>
-    </AllTagsWrapper>
+    <Layout>
+      <AllTagsWrapper>
+        <AllTagsHeading>Tags</AllTagsHeading>
+        <AllTagsList>
+          {Object.keys(posts).map((tagName) => {
+            return (
+              <AllTagsListItem key={tagName}>
+                <TagItem to={`/tags/${tagName}`}>{tagName}</TagItem>
+              </AllTagsListItem>
+            );
+          })}
+        </AllTagsList>
+      </AllTagsWrapper>
+      <Footer />
+    </Layout>
   );
 }
 
@@ -59,7 +64,7 @@ const TagsPage = Styled.article`
 
 const TagsHeading = Styled.h1`
   font-size: 2.4rem;
-  color: ${colors.midGray};
+  color: ${colors.darkGray};
 
   span {
     font-weight: bold;
