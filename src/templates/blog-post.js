@@ -108,7 +108,7 @@ export default function Template({ data }) {
 
             <BlogPostImage>
               <Img
-                sizes={post.frontmatter.featuredImage.childImageSharp.sizes}
+                fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
               />
             </BlogPostImage>
             <BlogPostBody

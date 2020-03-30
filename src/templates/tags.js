@@ -19,7 +19,9 @@ export default function Tags({ pageContext }) {
               return (
                 <TagsListItem key={id}>
                   <TaggedItem>
-                    <TagLink to={frontmatter.path}>{frontmatter.title}</TagLink>
+                    <Link className="tag__link" to={frontmatter.path}>
+                      {frontmatter.title}
+                    </Link>
                   </TaggedItem>
                 </TagsListItem>
               );
@@ -75,7 +77,17 @@ const TagsListItem = Styled.li`
   padding: 4px 0;
 `;
 
-const TaggedItem = Styled.h2``;
+const TaggedItem = Styled.h2`
+
+  .tag__link {
+    text-transform: uppercase;
+    font-size: 2rem;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+`;
 
 const AllTagsWrapper = Styled.section`
   max-width: 960px;
@@ -100,15 +112,6 @@ const AllTagsListItem = Styled.li`
   display: inline-block;
   margin-right: 20px;
   margin-bottom: 20px;
-`;
-
-const TagLink = Styled(Link)`
-  text-transform: uppercase;
-  font-size: 2rem;
-
-  &:hover {
-    text-decoration: none;
-  }
 `;
 
 const TagItem = Styled(Link)`
