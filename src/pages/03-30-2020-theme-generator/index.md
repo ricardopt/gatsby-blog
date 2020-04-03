@@ -15,4 +15,7 @@ In a fast moving industry like ours, it is imperative that we have tools that al
 
 See the Theme Generator's [project page on Github](https://github.com/mediacurrent/theme_generator_8).
 
+Watch the full tutorial below:
+
+
 <iframe width="720" height="405" src="https://www.youtube.com/embed/cVyA2v-UwSQ" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
