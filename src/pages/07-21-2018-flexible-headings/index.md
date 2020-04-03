@@ -13,7 +13,8 @@ excerpt: "Headings are normally used for page or section titles and are a big pa
   Proper use of headings h1-h6 in your project presents many advantages incuding semantic markup, better SEO ranking and better accesibility.
 </blockquote>
 
-### _Updated April 3, 2020_
+
+**_Updated April 3, 2020_**
 
 
 Building websites using the component based approach presents all kinds of advantages over the traditional page building approach. Today I’m going to show how to create what would normally be an Atom if we use the atomic design approach for building components. We are going to take this simple component to a whole new level by providing a way to dynamically controlling how it is rendered.
