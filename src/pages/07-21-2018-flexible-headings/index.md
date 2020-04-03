@@ -13,6 +13,10 @@ excerpt: "Headings are normally used for page or section titles and are a big pa
   Proper use of headings h1-h6 in your project presents many advantages incuding semantic markup, better SEO ranking and better accesibility.
 </blockquote>
 
+
+**_Updated April 3, 2020_**
+
+
 Building websites using the component based approach presents all kinds of advantages over the traditional page building approach. Today I’m going to show how to create what would normally be an Atom if we use the atomic design approach for building components. We are going to take this simple component to a whole new level by providing a way to dynamically controlling how it is rendered.
 
 
@@ -24,11 +28,10 @@ Headings are normally used for page or section titles and are a big part of maki
 <h1>This is a Heading 1</h1>
 ```
 
-The idea of components is that they are reusable, but how can we possibly turn what already looks like a bare bones component into one that provides options for choosing the heading level at rendering time?  If we were to reuse the heading component as it is we would always end up with an H1 heading.  There will be times when we may want an H2, H3, etc.
+The idea of components is that they are reusable, but how can we possibly turn what already looks like a bare bones component into one that provides options and flexibility? What if we wanted to use a h2 or h3? or what if the title field is a link to another page? Then the heading component would probably not work because we have no way of changing the heading level from h1 to any other level or add a URL. Let's improve the heading component so we make it more dynamic.
 
 
-
-### Enter Twig and JSON
+## Enter Twig and JSON
 Twig offers many advantages over plain HTML and today we will use some logic to transform the static heading component into a more dynamic one.
 
 Let’s start by creating a simple JSON object which we will use as data for Twig to consume.  We will build some logic around this data to make the heading component more dynamic.  This is typically how I build components on projects I work on.
@@ -39,81 +42,85 @@ Let’s start by creating a simple JSON object which we will use as data for Twi
 
 ```json
 {
-  "title": "This is an awesome heading component",
-  "heading_level": "",
-  "classes": ""
+  "heading": {
+    "heading_level": "",
+    "modifier": "",
+    "title": "This is the best heading I've seen!",
+    "url": ""
+  }
 }
 ```
 
-So we created a simple JSON object with 3 keys: title, heading_level and classes.  We will use these variables to transform the heading element and add logic.
+So we created a simple JSON object with 4 keys: **heading_level**, **modifier**, **title**, and **url**.
+
+* The `heading_level` is something we can use to change the headings from say, h1 to h2 or h3 if we need to.
+* The `modifier` key allows us to pass a modifier CSS class when we make use of this component. The modifier class will make it possible for us to style the heading differently than other headings, if needed.
+* The `title` key is the title's string of text that will become the title of a page or a component.
+* ... and finally, the `url` key, if present, will allow us to wrap the title in an `<a>` tag, to make it a link.
 
 4. Inside the heading folder create a new file called **heading.twig**
 5. Inside the new file paste the code snippet below
 
 ```twig
-{% set heading_level = heading_level | default(2) %}
-<h{{ heading_level }} class="heading {{ classes|default('') }}">
-    {{ title }}
-</h{{ heading_level }}>
+<h{{ heading.heading_level|default('2') }} class="heading{{ heading.modifier ? ' ' ~ heading.modifier }}">
+  {% if heading.url %}
+    <a href="{{ heading.url }}" class="heading__link">
+      {{ heading.title }}
+    </a>
+  {% else %}
+    {{ heading.title }}
+  {% endif %}
+</h{{ heading.heading_level|default('2') }}>
+
 ```
+
 ---
 
-So let’s go over what’s happening here.  We will break things down to better understand:
+Wow! What's all this? 😮
 
-```twig
-{% set heading_level = heading_level | default(2) %}
-```
-We created a new variable for the heading level so we can pass it to the heading component to decide what heading we want to render (h1-h6).  If no value is passed the heading level will be 2 (H2), by default.
+Let's break things down to explain what's happening here since the twig code has changed significantly:
 
+* First we make use of `heading.heading_level` to complete the number part of the heading.  If a value is not provided for _heading_level_ in the JSON file, we are setting a default of 2.  This will ensue that by default we will have a `<h2>` as the title, much better than `<h1>` as we saw before.  This value can be changed every time the heading isused.  The same approach is taken to close the heading tag at the last line of code.
+* Also,  in addition to adding a class of `heading`, we check whether there is a value for the `modifier` key in JSON.  If there is, we pass it to the heading as a CSS class.  If no value is provided nothing will be added.
+* In the next line line, we check whether a URL was provided in the JSON file, and if so, we wrap the `{{ title }}` variable in a `<a>` tag to turn the title into a link.  The `href` value for the link is `{{ heading.url }}`.  If no URL is provided in the JSON file, we simply print the value of `{{ title }}` as plain text.
 
-
-```twig
-<h{{ heading_level }} class="{{ classes|default('') }}">
-```
-Next we make use of the heading_level variable we just created by passing it to compose the heading tag (i.e. **h2**).  In addition, we are using the classes key so we can pass a unique css class to the heading when it’s time to include it in our templates.  More on this later.
-
-
-
-```twig
-{{ title }}
-```
-Next we pass the value of the title key so the text for the heading can be rendered. This may seem like an overkill because we could simply type the title of the heading directly in the twig template, however, this is a better approach for separation of concern between data and markup.
-
-
-
-```twig
-</h{{ heading_level }}>
-```
-Finally we close the heading tag by appending the heading_level variable.
-
-
-
-#### Now what?
+## Now what?
 Well, our heading component is ready but unfortunately the component on its own does not do any good.  The best way to take advantage of our super smart component is to start using it within other components.
 
 
-
 ## Putting the heading component to use
-As previously indicated, the idea of components is so they can be reusable which eliminates duplication and reduces amount of work and effort.  Now that we have the heading component ready, we can reuse it in other templates by taking advantage of twig’s include statement.  That will look like this:
+As previously indicated, the idea of components is so they can be reusable which eliminates code duplication.  Now that we have the heading component ready, we can reuse it in other templates by taking advantage of twig’s `include` statements.  That will look like this:
 
 ```twig
-<article class="media-card">
+<article class="card">
   {%
     include '@components/heading/heading.twig' with {
-      "title": title,
-      "heading_level": 3,
-      "classes": 'media-card__heading'
-    }
+      "heading": heading
+    } only
   %}
 </article>
 ```
 
-The example above shows how we can reuse the heading component in the media-card component by using Twig’s include statement.  By including the heading component we can individual pass each of the keys we originally created in the JSON object and change the value of those keys based on our needs.
-NOTE:  For this to work, the same keys need to exist in the media-card’s JSON object.
+The example above shows how we can reuse the heading component in the `card` component by using a Twig’s `include` statement.
 
-From the code above we can see that we are asking for the heading to be a H3 and we are passing the css class of `media-card__heading` so we can pass specific styles when the heading is used in the media-card component.
+**NOTE**:  For this to work, the same data structure for the heading needs to exist in the card’s JSON file.  Or, you could also alter the heading's values in twig, like this:
 
-You noticed the part `@components`? this is only an example of a namespace.  If you are not familiar with the **components library** drupal module, it allows for creating namespace for your theme which you can use on your theme and modules. Read more about the [component libraries module](https://www.drupal.org/project/components).
+```twig
+<article class="card">
+  {%
+    include '@components/heading/heading.twig' with {
+      "heading": {
+        "heading_level": 3,
+        "modifier": 'card__title',
+        "title": "This is a super flexible and smart heading",
+        "url": "https://mariohernandez.io"
+      }
+    } only
+  %}
+</article>
+```
+
+You noticed the part `@components`? this is only an example of a namespace.  If you are not familiar with the [component libraries](https://www.drupal.org/project/components) Drupal module, it allows you to create namespaces for your theme which you can use to nest or include components as we see above.
 
 
 ### End result
@@ -121,19 +128,18 @@ You noticed the part `@components`? this is only an example of a namespace.  If 
 The heading component we built above would look like this when it is rendered:
 
 ```html
-<h3 class="heading media-card__heading">
-  This is an awesome heading component
+<h3 class="heading card__title">
+  <a href="https://mariohernandez.io" class="heading__link">
+    This is a super flexible and smart heading
+  </a>
 </h3>
 ```
-It may seem like a waste of time to go thorugh all that trouble just to render a heading however, this provides all sorts of advantages when structuring your project's markup.
-
-
 
 ## In closing
 
-There is a lot more you can do with this approach but in the interest of time and length of this post I’ve focused on the most basic functionality.  The main goal of this post is to bring light on how important it is to build components that are not restricted and can be used throughout the site in a way that does not feel like you are repeating yourself.
+The main goal of this post is to bring light on how important it is to build components that are not restricted and can be used throughout the site in a way that does not feel like you are repeating yourself.
 
-
+***
 
 #### Additional Resources:
 [Managing heading levels in design systems](https://medium.com/@Heydon/managing-heading-levels-in-design-systems-18be9a746fa3).
