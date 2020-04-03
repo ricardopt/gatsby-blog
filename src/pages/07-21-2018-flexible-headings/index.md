@@ -51,7 +51,7 @@ Let’s start by creating a simple JSON object which we will use as data for Twi
 }
 ```
 
-So we created a simple JSON object with 5 keys: `heading_level`, `modifier`, `title`, and `url`.
+So we created a simple JSON object with 4 keys: _heading_level_, _modifier_, _title_, and _url_.
 
 * The `heading_level` is something we can use to change the headings from say, h1 to h2 or h3 if we need to.
 * The `modifier` key allows us to pass a modifier CSS class when we make use of this component. The modifier class will make it possible for us to style the heading differently than other headings, if needed.
